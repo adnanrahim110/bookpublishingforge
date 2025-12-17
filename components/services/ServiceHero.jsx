@@ -3,10 +3,36 @@
 import Button from "@/components/ui/Button";
 import Title from "@/components/ui/Title";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import {
+  ArrowRight,
+  BookCheck,
+  FileEdit,
+  Globe,
+  Headphones,
+  LayoutGrid,
+  Megaphone,
+  Palette,
+  PenLine,
+  Rocket,
+  Sparkles,
+  Tablet,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
+
+const SERVICE_ICON_BY_SLUG = {
+  ghostwriting: PenLine,
+  "book-editing": FileEdit,
+  proofreading: BookCheck,
+  "cover-design": Palette,
+  formatting: LayoutGrid,
+  publishing: Rocket,
+  "book-marketing": Megaphone,
+  "audiobook-production": Headphones,
+  "book-distribution": Globe,
+  "ebook-creation": Tablet,
+};
 
 const ServiceHero = ({ service }) => {
   const containerRef = useRef(null);
@@ -18,6 +44,7 @@ const ServiceHero = ({ service }) => {
   const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 45]);
+  const Icon = SERVICE_ICON_BY_SLUG[service.slug] ?? PenLine;
 
   return (
     <section
@@ -111,7 +138,7 @@ const ServiceHero = ({ service }) => {
               <div className="absolute inset-x-0 bottom-0 p-8 text-white">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30">
-                    <service.icon size={24} className="text-white" />
+                    <Icon size={24} className="text-white" />
                   </div>
                   <div>
                     <p className="text-xs uppercase tracking-widest text-white/80 font-medium">

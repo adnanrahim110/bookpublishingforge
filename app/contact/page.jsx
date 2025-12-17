@@ -2,10 +2,9 @@
 
 import { Button, Input, Select, Textarea } from "@/components/ui";
 import Title from "@/components/ui/Title";
-import { contactDetails, socialLinks } from "@/constants";
+import { contactDetails } from "@/constants";
 import { motion } from "framer-motion";
 import { Clock, Mail, MapPin, MessageSquare, Phone, Send } from "lucide-react";
-import Link from "next/link";
 import { useState } from "react";
 
 const serviceOptions = [
@@ -104,7 +103,7 @@ const ContactSection = () => {
   return (
     <section className="section-padding bg-white">
       <div className="container-custom">
-        <div className="grid lg:grid-cols-5 gap-12">
+        <div className="grid lg:grid-cols-5 items-center gap-12">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -112,9 +111,10 @@ const ContactSection = () => {
             className="lg:col-span-2 space-y-8"
           >
             <div>
-              <h2 className="text-2xl font-bold text-foreground mb-4">
+              <Title highlight="Information" tag="h1" className="mb-6">
+                {" "}
                 Contact Information
-              </h2>
+              </Title>
               <p className="text-foreground-muted">
                 Reach out through any of these channels. We typically respond
                 within 24 hours.
@@ -158,36 +158,6 @@ const ContactSection = () => {
                     {contactDetails.address}
                   </p>
                 </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center text-primary-500 shrink-0">
-                  <Clock size={22} />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-foreground mb-1">
-                    Working Hours
-                  </h3>
-                  <p className="text-foreground-muted">
-                    {contactDetails.workingHours}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="pt-6 border-t border-slate-100">
-              <h3 className="font-semibold text-foreground mb-4">Follow Us</h3>
-              <div className="flex items-center gap-3">
-                {socialLinks.map((social) => (
-                  <Link
-                    key={social.name}
-                    href={social.href}
-                    target="_blank"
-                    className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-foreground-muted hover:bg-primary-500 hover:text-white transition-colors duration-300"
-                  >
-                    <social.icon size={18} />
-                  </Link>
-                ))}
               </div>
             </div>
           </motion.div>

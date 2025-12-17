@@ -36,9 +36,11 @@ export default async function ServicePage({ params }) {
     notFound();
   }
 
+  const { icon: _icon, ...serviceForClient } = service;
+
   return (
     <>
-      <ServiceHero service={service} />
+      <ServiceHero service={serviceForClient} />
       <ServiceFeatures features={service.features} />
       <ServiceProcess process={service.process} />
       <FAQs items={service.faqs} />

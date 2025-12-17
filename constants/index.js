@@ -1,19 +1,14 @@
 import {
   BookCheck,
-  Facebook,
   FileEdit,
   Globe,
   Headphones,
-  Instagram,
   LayoutGrid,
-  Linkedin,
   Megaphone,
   Palette,
   PenLine,
   Rocket,
   Tablet,
-  Twitter,
-  Youtube,
 } from "lucide-react";
 
 export const navLinks = [
@@ -131,29 +126,12 @@ export const faqs = [
   },
 ];
 
-export const platforms = [
-  { name: "Amazon", logo: "/images/platforms/amazon.svg" },
-  { name: "Apple Books", logo: "/images/platforms/apple-books.svg" },
-  { name: "Barnes & Noble", logo: "/images/platforms/barnes-noble.svg" },
-  { name: "Audible", logo: "/images/platforms/audible.svg" },
-  { name: "Google Play Books", logo: "/images/platforms/google-play.svg" },
-  { name: "Kobo", logo: "/images/platforms/kobo.svg" },
-];
-
 export const contactDetails = {
   phone: "+1 (555) 123-4567",
   email: "hello@forgemybook.com",
   address: "123 Publishing Lane, New York, NY 10001",
   workingHours: "Mon - Fri: 9:00 AM - 6:00 PM EST",
 };
-
-export const socialLinks = [
-  { name: "Facebook", href: "https://facebook.com/forgemybook", icon: Facebook },
-  { name: "Twitter", href: "https://twitter.com/forgemybook", icon: Twitter },
-  { name: "Instagram", href: "https://instagram.com/forgemybook", icon: Instagram },
-  { name: "LinkedIn", href: "https://linkedin.com/company/forgemybook", icon: Linkedin },
-  { name: "YouTube", href: "https://youtube.com/forgemybook", icon: Youtube },
-];
 
 export const footerLinks = {
   services: [
