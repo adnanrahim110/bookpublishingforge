@@ -1,6 +1,5 @@
 import {
   BookCheck,
-  FileEdit,
   Globe,
   Headphones,
   LayoutGrid,
@@ -13,215 +12,608 @@ import {
 
 export const services = [
   {
-    slug: "ghostwriting",
-    title: "Ghostwriting",
-    shortDescription: "Transform your ideas into compelling narratives with our professional ghostwriting services.",
+    slug: "ghostwriting-services",
+    title: "Ghostwriting Services",
+    shortDescription: "Got a book in your heart but not on the page? Let’s write it together. We listen to your ideas, learn your voice, and bring your story to the world.",
     icon: PenLine,
-    image: "/images/services/ghostwriting.jpg",
-    heroDescription: "Have a story to tell but struggle to put it into words? Our experienced ghostwriters bring your vision to life while preserving your unique voice.",
-    features: [
-      "Dedicated professional ghostwriter matched to your genre",
-      "Complete confidentiality and NDA protection",
-      "Regular progress updates and revision rounds",
-      "Your voice, your story, professionally crafted",
-      "Research and interview sessions included",
-      "Final manuscript in your preferred format",
-    ],
-    process: [
-      { step: 1, title: "Discovery Call", description: "We discuss your vision, goals, and expectations for the book." },
-      { step: 2, title: "Outline Development", description: "Create a detailed chapter-by-chapter outline for approval." },
-      { step: 3, title: "Writing Phase", description: "Our ghostwriter crafts your manuscript with regular check-ins." },
-      { step: 4, title: "Revisions", description: "Multiple revision rounds to perfect your book." },
-      { step: 5, title: "Final Delivery", description: "Receive your polished manuscript ready for publishing." },
-    ],
+    hero: {
+      title: "Your Idea, Expertly Written",
+      highlight: "Expertly",
+      text: "Got a story burning inside you but can't find the words? You're not just hiring a writer; you're gaining a creative partner. Our professional ghostwriters are experts at listening and understanding your vision, learning your unique voice, and translating your ideas into a compelling, polished manuscript. This is 100% your book, we're just the skilled hands that help you write it.",
+    },
+    features: {
+      title: "What's Included (Beyond the Basics)",
+      text: "We go beyond simple writing to offer a true collaborative partnership:",
+      points: [
+        {
+          t: "Your Dedicated Writing Partner",
+          d: "We carefully match you with a professional genre specialist writer who specializes in your genre and gets your vision.",
+        },
+        {
+          t: "Complete Confidentiality",
+          d: "Your story and our partnership are protected. We operate with strict NDAs, your secret is safe with us."
+        },
+        {
+          t: "A Truly Collaborative Process",
+          d: "This is built on regular progress updates, scheduled interview sessions to capture your insights, and multiple revision rounds. Your feedback shapes every chapter."
+        },
+        {
+          t: "More Than a Document",
+          d: "You receive a final manuscript that’s professionally formatted and ready for the next steps, whether that's editing, design, or publishing."
+        },
+      ],
+    },
+    process: {
+      title: "Your Journey from Idea to Manuscript",
+      highlight: "Manuscript",
+      text: "Our process is designed for clarity and collaboration, so you're never in the dark.",
+      steps: [
+        {
+          t: "The Discovery Call",
+          d: "We start by listening. We'll discuss your ideas, goals, and the heart of your story."
+        },
+        {
+          t: "Blueprinting Your Book",
+          d: "Your ghostwriter develops a detailed chapter-by-chapter outline for your approval before a single page is written."
+        },
+        {
+          t: "The Writing Phase",
+          d: "Your ghostwriter brings the outline to life, sharing drafts regularly for your input."
+        },
+        {
+          t: "Refinement & Revisions",
+          d: "We refine the manuscript through multiple rounds of revisions until it perfectly matches your vision."
+        },
+        {
+          t: "Final Delivery",
+          d: "You receive the complete, polished manuscript, your story, ready for the world."
+        },
+      ],
+    },
+    cta: {
+      title: "Start Your Book's Journey",
+      text: 'Ready to turn "I have an idea" into "I wrote a book"? Let\'s have a real conversation about your story.Get your free, no- obligation consultation and a custom quote.',
+    },
     faqs: [
-      { question: "Will the book be in my name?", answer: "Absolutely! You retain full authorship and credit. Our ghostwriters work behind the scenes." },
-      { question: "How involved will I be in the process?", answer: "As involved as you want! From minimal input to active collaboration, we adapt to your preference." },
-      { question: "How long does ghostwriting take?", answer: "Typically 3-6 months depending on book length and complexity." },
+      {
+        q: "Will my name be on the book?",
+        a: "Absolutely, yes. You retain full authorship, credit, and copyright. Our role is to be your invisible collaborator."
+      },
+      {
+        q: "How do you capture my voice?",
+        a: "Through in-depth interviews, reviewing any materials you provide, and constant feedback. We learn how you speak and think."
+      },
+      {
+        q: "What if I don't like the direction?",
+        a: "The outline phase is our crucial checkpoint to align on vision. Throughout, our revision rounds are designed specifically to course-correct and refine."
+      },
     ],
   },
   {
-    slug: "book-editing",
-    title: "Book Editing",
-    shortDescription: "Polish your manuscript to perfection with our comprehensive editing services.",
-    icon: FileEdit,
-    image: "/images/services/editing.jpg",
-    heroDescription: "Every great book deserves meticulous editing. Our editors refine your manuscript while honoring your creative vision.",
-    features: [
-      "Developmental editing for structure and flow",
-      "Line editing for style and clarity",
-      "Copy editing for grammar and consistency",
-      "Genre-specific editors with industry experience",
-      "Detailed feedback and suggestions",
-      "Track changes for easy review",
-    ],
-    process: [
-      { step: 1, title: "Manuscript Review", description: "Initial assessment of your manuscript's needs." },
-      { step: 2, title: "Editing Plan", description: "Customized editing approach based on your goals." },
-      { step: 3, title: "Deep Edit", description: "Thorough editing with detailed comments." },
-      { step: 4, title: "Author Review", description: "You review changes and provide feedback." },
-      { step: 5, title: "Final Polish", description: "Incorporating your feedback for the final version." },
-    ],
-    faqs: [
-      { question: "What's the difference between editing types?", answer: "Developmental focuses on structure, line editing on prose style, and copy editing on grammar/mechanics." },
-      { question: "Will you change my voice?", answer: "Never. We enhance and clarify while preserving your unique author voice." },
-      { question: "How many revision rounds are included?", answer: "Our packages include 2-3 revision rounds depending on the service level." },
-    ],
-  },
-  {
-    slug: "proofreading",
-    title: "Proofreading",
-    shortDescription: "Catch every typo and error before your book goes to print.",
+    slug: "book-editing-and-proofreading",
+    title: "Book Editing and Proofreading",
+    shortDescription: "Nervous about missing a typo? We’ll be your safety net. One final, meticulous read so you can hit “publish” with total confidence.",
     icon: BookCheck,
-    image: "/images/services/proofreading.jpg",
-    heroDescription: "The final polish your manuscript needs. Our eagle-eyed proofreaders ensure your book is error-free and publication-ready.",
-    features: [
-      "Comprehensive error detection",
-      "Grammar and punctuation correction",
-      "Spelling and typo elimination",
-      "Consistency checks throughout",
-      "Formatting verification",
-      "Final quality assurance",
-    ],
-    process: [
-      { step: 1, title: "Document Prep", description: "Format and prepare your manuscript for review." },
-      { step: 2, title: "First Pass", description: "Detailed proofreading for all errors." },
-      { step: 3, title: "Quality Check", description: "Second review to ensure nothing was missed." },
-      { step: 4, title: "Delivery", description: "Clean, error-free manuscript delivered." },
-    ],
+    hero: {
+      title: "Your Manuscript's Final Checkpoint",
+      highlight: "Checkpoint",
+      text: "Even the most established authors trust a fresh, professional eye before their work reaches readers. After you’ve shaped the story, refined the voice, and polished every chapter, a final review ensures nothing is overlooked. Our proofreading service provides that last, critical layer of quality control, so you can publish with confidence, knowing your manuscript is accurate, consistent, and ready for the world.",
+    },
+    features: {
+      title: "",
+      text: "Think of us as your eagle-eyed, detail-obsessed final reader, dedicated to catching the tiny slips that are so easy to miss after you’ve been staring at the same words for months.",
+      points: [
+        {
+          t: "Spelling & Typos",
+          d: "We hunt down every misspelled word, autocorrect fail, and sneaky typo."
+        },
+        {
+          t: "Grammar & Punctuation",
+          d: "We fix grammatical hiccups and ensure every comma, period, and em dash is in its perfect place."
+        },
+        {
+          t: "Consistency is Key",
+          d: "We check for uniformity in spelling (e.g., \"proofreader\" vs. \"proof - reader\"), capitalization, hyphenation, and formatting throughout."
+        },
+        {
+          t: "Formatting Flaws",
+          d: "We spot irregular spacing, awkward line breaks, and inconsistent heading styles that can disrupt a reader’s experience."
+        },
+        {
+          t: "Final Quality Pass",
+          d: "This isn't just one quick look. Our process includes multiple checks to ensure nothing slips through."
+        },
+      ]
+    },
+    process: {
+      title: "The Proofreading Journey: Simple & Thorough",
+      text: "We make the final step stress-free and transparent.",
+      steps: [
+        {
+          t: "We Prepare",
+          d: "You send us your manuscript. We get it ready for its meticulous review, ensuring we see it exactly as a reader would."
+        },
+        {
+          t: "The Deep Dive (First Pass)",
+          d: "Our expert proofreader conducts a thorough, line-by-line review, marking corrections and queries."
+        },
+        {
+          t: "The Double-Check (Quality Review)",
+          d: "A second professional reviews the work to ensure absolute accuracy—because everyone needs a second pair of eyes."
+        },
+        {
+          t: "You Get the All-Clear",
+          d: "We deliver your clean, polished, and publication-ready manuscript back to you, complete with a summary of changes if you’d like one."
+        },
+      ]
+    },
+    cta: {
+      title: "Ready to Cross the Finish Line with Confidence?",
+      text: "Don't let small errors distract readers from your amazing story. Get a free, no-obligation quote for proofreading your manuscript. It’s the final, crucial step to ensure your book makes a perfectly professional first impression.",
+      points: ["A Fast Turnaround", "Attention to Detail", "Complete Peace of Mind"]
+    },
     faqs: [
-      { question: "Is proofreading different from editing?", answer: "Yes. Proofreading is the final step focusing on surface errors, while editing addresses content and style." },
-      { question: "When should I get proofreading done?", answer: "After all editing and revisions are complete, as the final step before publishing." },
+      {
+        q: "What’s the difference between proofreading and editing?",
+        a: "Great question! Editing happens earlier and focuses on improving the content, structure, flow, and style of your manuscript. Proofreading is the final stage, focusing exclusively on surface-level errors in spelling, grammar, punctuation, and formatting."
+      },
+      {
+        q: "Will you change my story or my writing style?",
+        a: "Absolutely not. Our only goal is to correct errors and ensure consistency. We are guardians of your final text, not editors of your voice. Your story remains 100% yours."
+      },
+      {
+        q: "What file format do you need?",
+        a: "We typically work with standard formats like Microsoft Word (.doc/.docx) or Google Docs, which allow for easy tracking of changes. Just ask if you have something different!"
+      },
     ],
   },
   {
-    slug: "cover-design",
-    title: "Cover Design",
-    shortDescription: "Create stunning book covers that captivate readers at first glance.",
+    slug: "book-cover-design",
+    title: "Book Cover Design",
+    shortDescription: "Don’t let your book get lost on the shelf. We design covers that grab attention, match your vibe, and make readers think, “I need to read this.”",
     icon: Palette,
-    image: "/images/services/cover-design.jpg",
-    heroDescription: "Your book cover is your first impression. Our designers create covers that not only look stunning but sell books.",
-    features: [
-      "Custom designs tailored to your genre",
-      "Professional typography and layout",
-      "Print and digital formats included",
-      "Multiple concept options to choose from",
-      "Unlimited revisions until perfect",
-      "Source files provided upon completion",
-    ],
-    process: [
-      { step: 1, title: "Design Brief", description: "Discuss your vision, genre, and target audience." },
-      { step: 2, title: "Concept Development", description: "Create 2-3 initial design concepts." },
-      { step: 3, title: "Refinement", description: "Refine your chosen concept with feedback." },
-      { step: 4, title: "Finalization", description: "Prepare final files for all platforms." },
-    ],
+    hero: {
+      title: "The Face of Your Story",
+      highlight: "Story",
+      text: "Generational excuse \"don't judge a book by its cover,\" but let's be real, everyone does.Your cover is your book's first impression, its silent salesperson, and the single most essential piece of marketing you will ever invest in. We don't just make pretty pictures; we design covers that stop the scroll, capture the essence of your story, and convince a reader to click \"Buy.\" <br/> This is where your story meets its audience. Let's make the introduction unforgettable.",
+    },
+    features: {
+      title: "What You Get (More Than Just a JPEG)",
+      highlight: "JPEG",
+      text: "Our design process is a true collaboration, delivering everything you need for a professional launch.",
+      points: [
+        {
+          t: "A Cover That Sells",
+          d: "Strategic, genre-perfect design that appeals directly to your target readers."
+        },
+        {
+          t: "Custom, Not Canned",
+          d: "Original artwork and typography created from scratch for your book. No templates."
+        },
+        {
+          t: "Complete File Suite",
+          d: "You’ll receive print-ready files (for Amazon KDP, IngramSpark, etc.) and all digital formats (e-book, thumbnail, marketing assets)."
+        },
+        {
+          t: "Full Format Flexibility",
+          d: "Expert design for paperback, hardcover, and dust jacket layouts."
+        },
+        {
+          t: "Unlimited Revisions",
+          d: "We work with you through multiple rounds until you are 100% thrilled with the final design."
+        },
+        {
+          t: "Author-Friendly Guidance",
+          d: "We'll explain technical specs (bleed, spine width, resolution) in plain English."
+        }
+      ]
+    },
+    process: {
+      title: "The Design Journey – Begins With Just A Concept",
+      highlight: "Concept",
+      text: "Book Publishing Forge team makes the creative process exciting, collaborative, and crystal clear.",
+      steps: [
+        {
+          t: "The Creative Brief",
+          d: "We start by getting to know your book inside and out—its genre, tone, audience, and the core emotion you want to convey."
+        },
+        {
+          t: "Concept & Composition",
+          d: "Our designers create 2-3 unique cover concepts for you to review. This is where we explore big ideas."
+        },
+        {
+          t: "Refinement Round",
+          d: "You choose your favorite direction, and we refine it. We tweak the imagery, perfect the typography, and finesse every detail."
+        },
+        {
+          t: "Finalization & Files",
+          d: "Once approved, we prepare and deliver your complete professional file package, ready for global publication."
+        }
+      ]
+    },
+    cta: {
+      title: "Ready to Give Your Book the Cover It Deserves?",
+      text: "Your story is unique. Its cover should be, too. Let's discuss your vision and create a cover that does justice to the world you've built inside. Get your free, no-obligation consultation and custom quote today.",
+      points: ["A Strategic & Creative Partnership", "Designs That Convert", "A Cover You'll Be Proud Of Get Your Free Cover Design Quote"]
+    },
     faqs: [
-      { question: "How many design concepts will I receive?", answer: "You'll receive 2-3 unique concepts to choose from, with unlimited revisions on your selected design." },
-      { question: "What file formats will I get?", answer: "High-resolution files for print (PDF, TIFF) and web (JPG, PNG) optimized for all platforms." },
+      {
+        q: "Do I own the full rights to my cover design?",
+        a: "Yes, completely. Once the project is finalized and delivered, you own the copyright to the final cover artwork for your book."
+      },
+      {
+        q: "What if I don't like any of the initial concepts?",
+        a: "No problem. The concept phase is for exploration. We'll take your feedback, go back to the drawing board, and present new directions until we find the perfect fit."
+      },
+      {
+        q: "Can you design a series look for my books?",
+        a: "Absolutely! We specialize in creating cohesive, branded series designs that build recognition and loyalty with your readers."
+      },
+      {
+        q: "How long does the process take?",
+        a: "Typically, a complete cover design project takes 2-3 weeks from brief to final files, depending on revision rounds."
+      }
     ],
   },
   {
-    slug: "formatting",
-    title: "Book Formatting",
-    shortDescription: "Professional interior layout that enhances the reading experience.",
+    slug: "book-formatting-services",
+    title: "Book Formatting Services",
+    shortDescription: "Ever notice when a book just feels good to read? That’s our magic. We format your pages so the reading experience is smooth, consistent, and totally professional.",
     icon: LayoutGrid,
-    image: "/images/services/formatting.jpg",
-    heroDescription: "Beautiful interior design matters. We format your book for a professional, readable layout across all formats.",
-    features: [
-      "Print-ready interior layout",
-      "eBook formatting (ePub, Mobi, KF8)",
-      "Chapter headers and styling",
-      "Table of contents creation",
-      "Image and illustration placement",
-      "Platform-specific requirements met",
-    ],
-    process: [
-      { step: 1, title: "Format Analysis", description: "Determine requirements for your target platforms." },
-      { step: 2, title: "Layout Design", description: "Create the interior design template." },
-      { step: 3, title: "Content Flow", description: "Apply formatting throughout the manuscript." },
-      { step: 4, title: "Quality Check", description: "Review on multiple devices and formats." },
-    ],
+    hero: {
+      title: "The Invisible Art of a Great Reading Experience",
+      highlight: "Experience",
+      text: "Have you ever picked up a book where the text felt cramped, the chapters jarred, or the layout just felt… off? Great formatting is invisible, it's what makes a book feel effortless to read. We transform your manuscript into a professionally structured book, with a clean, beautiful interior that guides your reader seamlessly from the first page to the last. <br/> We handle the technical magic for both print and e-books, ensuring your story is presented perfectly on every platform and device.",
+    },
+    features: {
+      title: "What's Included in Your Formatted Book",
+      highlight: "Included",
+      text: "We ensure every detail is polished for a flawless presentation:",
+      points: [
+        {
+          t: "Print-Ready Interior Layout",
+          d: "Professionally styled pages with perfect margins, fonts, and spacing that meet printer specifications."
+        },
+        {
+          t: "Universal eBook Formatting",
+          d: "We create optimized files for every major platform (ePub, Mobi, KF8) so your book looks great on any Kindle, tablet, or phone."
+        },
+        {
+          t: "Professional Chapter Styling",
+          d: "Distinctive headers, scene breaks, and consistent styling that gives your book its unique rhythm."
+        },
+        {
+          t: "Functional Navigation",
+          d: "A clickable, automatic Table of Contents for e-books and a polished one for print editions."
+        },
+        {
+          t: "Seamless Image Integration",
+          d: "Careful placement and sizing of illustrations, graphs, or photos with proper captions."
+        },
+        {
+          t: "Platform Compliance",
+          d: "We guarantee your files meet the specific technical requirements of Amazon KDP, IngramSpark, Apple Books, and others."
+        }
+      ]
+    },
+    process: {
+      title: "The Formatting Process: Simple & Streamlined",
+      highlight: "Streamlined",
+      text: "Our process is designed to be straightforward, so you can focus on your writing.",
+      steps: [
+        {
+          t: "Analysis & Consultation",
+          d: "We start by discussing your vision and analyzing your manuscript's specific needs for your target publishing platforms."
+        },
+        {
+          t: "Template & Layout Design",
+          d: "We create a custom interior design template that establishes the look and feel of your entire book."
+        },
+        {
+          t: "Precision Formatting",
+          d: "We meticulously apply the formatting throughout your manuscript, ensuring absolute consistency in every element."
+        },
+        {
+          t: "Rigorous Quality Check",
+          d: "We test the final files across multiple devices (e-readers, tablets, phones) and proof print copies to ensure perfection."
+        }
+      ]
+    },
+    cta: {
+      title: "Ready for a Book That Looks as Good as It Reads?",
+      text: "Don't let awkward formatting distract readers from your brilliant story. Get a free, no-obligation quote to give your book the professional polish it deserves. It’s the final technical step to ensure your work stands tall on any shelf—physical or digital.",
+      points: ["Flawless File", "Cross-Platform Compatibility", "Professional Finish"]
+    },
     faqs: [
-      { question: "What's included in formatting?", answer: "Page layout, chapter styling, headers/footers, table of contents, and preparation for your chosen platforms." },
-      { question: "Do you format for both print and ebook?", answer: "Yes, we handle both print-ready PDFs and all major eBook formats." },
+      {
+        q: "What's the difference between formatting for print and for e-books?",
+        a: "They are two different skills! Print formatting is about fixed, beautiful page design. E-book formatting is about creating a flexible, 'reflowable' file that can adapt to different screen sizes and reader font preferences. We expertly handle both."
+      },
+      {
+        q: "Can you format books with complex layouts, like poetry or textbooks?",
+        a: "Absolutely. We specialize in more complex projects that require special attention to imagery, sidebars, footnotes, or non-standard text flow."
+      },
+      {
+        q: "What do you need from me to get started?",
+        a: "Just your final, edited manuscript in a standard format (like Word or Google Docs) and any image files. We'll handle the rest."
+      }
     ],
   },
   {
-    slug: "publishing",
-    title: "Publishing Services",
-    shortDescription: "Navigate the publishing world with expert guidance and support.",
+    slug: "book-publishing-services",
+    title: "Book Publishing Services",
+    shortDescription: "Ready to be a published author? We take your finished manuscript and make it an official, published book on well-known platforms.",
     icon: Rocket,
-    image: "/images/services/publishing.jpg",
-    heroDescription: "From manuscript to marketplace. We handle the complexities of publishing so you can focus on being an author.",
-    features: [
-      "Amazon KDP publishing and optimization",
-      "IngramSpark distribution setup",
-      "ISBN registration and management",
-      "Metadata optimization for discoverability",
-      "Pricing strategy guidance",
-      "Multi-platform publishing coordination",
-    ],
-    process: [
-      { step: 1, title: "Platform Strategy", description: "Determine the best platforms for your book." },
-      { step: 2, title: "Account Setup", description: "Create and configure publishing accounts." },
-      { step: 3, title: "Upload & Optimize", description: "Upload files with optimized metadata." },
-      { step: 4, title: "Launch", description: "Go live and monitor initial performance." },
-    ],
+    hero: {
+      title: "Your Bridge to \"Published Author\"",
+      highlight: "Published Author",
+      text: "At BookPublishingForge, we transform your manuscript into a professionally published book that reaches readers everywhere. You’ve done the hard work of writing, now let us guide you through the complexities of ISBNs, distribution, and retailer listings. From formatting to global availability, we make sure your book is polished, accessible, and ready to captivate your audience. Think of us as your trusted publishing partner, turning your story into a book the world can discover.",
+    },
+    features: {
+      title: "What Our Full Publishing Package Includes",
+      highlight: "Includes",
+      text: "Our team at Book Publishing Forge, takes care of the entire back-end process, giving you a complete, ready-to-sell book:",
+      points: [
+        {
+          t: "ISBN Assignment & Copyright",
+          d: "We secure your book's unique ISBN and guide you through copyright registration basics."
+        },
+        {
+          t: "Global Distribution Setup",
+          d: "We list your book across all major retailers, including Amazon, Barnes & Noble, Apple Books, Kobo, and IngramSpark's vast library network."
+        },
+        {
+          t: "Metadata Optimization",
+          d: "We craft your book's online \"DNA\"—the title, subtitle, categories, and keywords that help the right readers find it."
+        },
+        {
+          t: "Print & eBook Coordination",
+          d: "We ensure your paperback, hardcover, and eBook editions are correctly linked across all sales platforms."
+        },
+        {
+          t: "Publishing Platform Management",
+          d: "We handle the technical uploads and requirements for KDP, IngramSpark, Draft2Digital, and others."
+        },
+        {
+          t: "Launch Day Support",
+          d: "We provide a pre-launch checklist and guidance to ensure a smooth release day."
+        }
+      ]
+    },
+    process: {
+      title: "Our Smooth Publishing Process",
+      highlight: "Process",
+      text: "Our process is designed for clarity, you'll know exactly what's happening at each step.",
+      steps: [
+        {
+          t: "Pre-Publishing Strategy",
+          d: "We review your final files and map out the best platforms and distribution strategy for your goals."
+        },
+        {
+          t: "Global Listing Setup",
+          d: "We input all metadata, set pricing, and upload your files to the chosen retailers and distributors."
+        },
+        {
+          t: "Quality Assurance & Proofing",
+          d: "We order author proof copies and conduct final checks on the live listings before your book goes on sale."
+        },
+        {
+          t: "Live & Available",
+          d: "We confirm your book is officially published and provide you with all your sales links. Congratulations, you're a published author!"
+        }
+      ]
+    },
+    cta: {
+      title: "Wish to See Your Book on the Virtual Shelf?",
+      text: "Take the final step with confidence. Let's get your book into the world with a professional setup that maximizes its reach. Get your free, no-obligation publishing consultation and quote today.",
+      points: ["Expert Platform Navigation", "Global Distribution", "You Keep All Rights & Control"]
+    },
     faqs: [
-      { question: "Which platforms do you publish to?", answer: "Amazon KDP, IngramSpark, Apple Books, Barnes & Noble, Kobo, and more." },
-      { question: "Do I need my own ISBN?", answer: "We can help you obtain ISBNs or use free platform-provided ones based on your distribution goals." },
+      {
+        q: "What's the difference between publishing services and just using Amazon KDP myself?",
+        a: "We handle all the platforms for you, optimize your listings professionally, and manage the technical coordination between print and eBook editions. We save you hours of research and prevent costly setup errors."
+      },
+      {
+        q: "Do I still own my book and rights?",
+        a: "Absolutely, 100%. You retain complete copyright and control. We are a service provider setting up your self-published book. You are the publisher."
+      },
+      {
+        q: "How long does it take for my book to go live everywhere?",
+        a: "Once we have your final files, listings are typically live on Amazon within 72 hours. Wider global distribution through IngramSpark can take 2-4 weeks for full availability in bookstores."
+      },
+      {
+        q: "Can I use my own ISBN?",
+        a: "Yes, you can. We'll guide you on how to provide it and ensure it's applied correctly across all platforms."
+      }
     ],
   },
   {
-    slug: "book-marketing",
-    title: "Book Marketing",
-    shortDescription: "Reach your target readers with strategic book marketing campaigns.",
+    slug: "book-marketing-services",
+    title: "Book Marketing Services",
+    shortDescription: "What’s the point of publishing a book if nobody knows it’s out there? Let’s get your book in front of your intended audiences through our Holistic/Strategic Marketing Approach",
     icon: Megaphone,
-    image: "/images/services/marketing.jpg",
-    heroDescription: "Writing the book is just the beginning. Our marketing experts help you reach readers and build your author brand.",
-    features: [
-      "Amazon advertising campaigns",
-      "Social media marketing strategy",
-      "Book launch planning and execution",
-      "Email marketing setup",
-      "Author website and branding",
-      "Review generation strategies",
-    ],
-    process: [
-      { step: 1, title: "Market Research", description: "Analyze your genre, competition, and target readers." },
-      { step: 2, title: "Strategy Development", description: "Create a customized marketing plan." },
-      { step: 3, title: "Campaign Execution", description: "Launch and manage marketing campaigns." },
-      { step: 4, title: "Optimization", description: "Monitor results and optimize for performance." },
-    ],
+    hero: {
+      title: "Find Your Readers and Grow Your Audience",
+      highlight: "Audience",
+      text: [
+        "You’ve written an amazing book, now it’s time to make sure it reaches the readers who will love it. At BookPublishingForge, we bridge the gap between your story and its audience with smart, strategic marketing campaigns designed to generate buzz, boost sales, and grow your author platform.",
+        "Think of us as your dedicated launch team. Whether you’re promoting a new release or revitalizing a backlist title, we craft custom marketing plans that put your book in front of the right readers, at the right time, every time."
+      ]
+    },
+    features: {
+      title: "Our Marketing Toolkit: Multi-Platform Strategies",
+      highlight: "Multi-Platform",
+      text: "We tailor a mix of proven tactics to fit your book, goals, and budget, ensuring your story reaches the readers who are searching for it, just like you found us today.",
+      points: [
+        {
+          t: "Launch Strategy & Buzz Building",
+          d: "We map out a pre-launch and pre-order campaign, coordinate a release-day blitz, and craft compelling messaging to make your book an event."
+        },
+        {
+          t: "Keyword Marketing & SEO",
+          d: "We research and implement high-impact keywords so your book appears in searches for your genre, topic, and audience interests."
+        },
+        {
+          t: "Amazon & Retailer Optimization",
+          d: "We optimize your book's metadata, categories, and keywords to improve visibility and search ranking on Amazon and other major platforms."
+        },
+        {
+          t: "Targeted Advertising",
+          d: "We manage and optimize paid campaigns on Meta (Facebook/Instagram) and other social channels to reach relevant readers of your genre."
+        },
+        {
+          t: "Social Media & Content Marketing",
+          d: "We create engaging content—from behind-the-scenes looks to short audio clips—to build an authentic community around your work."
+        },
+        {
+          t: "Review & Influencer Outreach",
+          d: "We secure early reviews, leverage platforms like NetGalley, and partner with influencers (Bookstagram, BookTok) to tap into engaged audiences."
+        },
+        {
+          t: "Author Website & SEO",
+          d: "We ensure your author website is a compelling hub that converts visitors into fans, with clear calls-to-action and integrated audio samples."
+        }
+      ]
+    },
+    process: {
+      title: "Our Marketing Process: A Collaborative Campaign",
+      highlight: "Collaborative",
+      steps: [
+        {
+          t: "Goal-Setting Session",
+          d: "We start by understanding your book, your audience, and what \"success\" means for you—sales, reviews, or building your brand."
+        },
+        {
+          t: "Strategy & Plan Development",
+          d: "We present a customized marketing plan with clear timelines, tactics, and responsibilities."
+        },
+        {
+          t: "Execution & Community Building",
+          d: "We launch the campaign, managing ads, outreach, and content while keeping you engaged and informed."
+        },
+        {
+          t: "Analysis & Adaptation",
+          d: "We monitor results, provide regular reports, and adjust strategies in real-time to maximize your book's momentum."
+        }
+      ]
+    },
+    cta: {
+      title: "Eager to Turn Your Book Into a Success Story?",
+      text: "Don't let your masterpiece gather digital dust. Whether you're launching a new title or want to revitalize an existing book, let's craft a marketing plan that gets results. Get your free, no-obligation marketing consultation today.",
+      points: ["Data-Driven Strategy", "Creative Campaigns", "Transparent Communication"]
+    },
     faqs: [
-      { question: "When should I start marketing?", answer: "Ideally 2-3 months before launch to build anticipation and grow your audience." },
-      { question: "Do you guarantee bestseller status?", answer: "While we can't guarantee rankings, our proven strategies maximize your book's visibility and sales potential." },
+      {
+        q: "When should I start marketing my book?",
+        a: "The earlier, the better. A strong marketing campaign begins 3–6 months before your book's release to build audiences through a pre-launch strategic campaign."
+      },
+      {
+        q: "Do I need an audiobook?",
+        a: "It's a powerful way to expand your audience. Consider an audiobook if your ebook is selling well—especially in fiction (mystery, sci-fi, romance) or non-fiction (memoir, self-help). It introduces your work to busy professionals and listeners who prefer audio."
+      },
+      {
+        q: "What's the most important part of book marketing?",
+        a: "There is no single magic bullet. Success comes from a consistent, multi-channel approach. That said, a well-optimized book listing and a direct connection to readers (an email list) are two of the most durable assets you can build."
+      },
+      {
+        q: "How do you measure success?",
+        a: "Beyond sales, we track review volume and quality, website traffic, email list growth, and engagement rates on social posts to evaluate campaign health and adjust strategy."
+      }
     ],
   },
   {
     slug: "audiobook-production",
     title: "Audiobook Production",
-    shortDescription: "Bring your book to life with professional audiobook production.",
+    shortDescription: "Imagine your story experienced through a compelling audio format. We bring your story to life through full audiobook production and distribution, pairing your work with a professional narrator whose voice matches the tone and emotion of your story.",
     icon: Headphones,
-    image: "/images/services/audiobook.jpg",
-    heroDescription: "Reach the growing audiobook audience. We handle everything from narration to distribution on Audible and beyond.",
-    features: [
-      "Professional narrator casting and selection",
-      "Studio-quality recording",
-      "Expert audio editing and mastering",
-      "ACX and Findaway Voices distribution",
-      "Retail sample creation",
-      "Quality assurance to platform standards",
-    ],
-    process: [
-      { step: 1, title: "Narrator Selection", description: "Audition and select the perfect voice for your book." },
-      { step: 2, title: "Production", description: "Professional recording in acoustically treated studios." },
-      { step: 3, title: "Post-Production", description: "Editing, mastering, and quality control." },
-      { step: 4, title: "Distribution", description: "Upload to Audible, iTunes, and other platforms." },
-    ],
+    hero: {
+      title: "Let Your Readers Hear Your Story",
+      highlight: "Story",
+      text: [
+        "Imagine your book reaching listeners during their commute, workouts, or daily routines. An audiobook is more than a reading, it’s a performance that makes your story immersive, engaging, and accessible to a wider audience.",
+        "At BookPublishingForge, we transform your manuscript into a professional, studio-quality audio experience that resonates with listeners. From casting the perfect narrator to delivering the final mastered audio file, we guide you through every step, so your story can captivate the growing community of audiobook enthusiasts."
+      ],
+    },
+    features: {
+      title: "What's Included in Your Audiobook Production",
+      highlight: "Included",
+      text: "Book Publishing Forge handles the entire production process with professional care, delivering files ready for global distribution.",
+      points: [
+        {
+          t: "Professional Narrator Casting",
+          d: "We hand-match your book with a voice actor whose tone, pacing, and style perfectly embody your story."
+        },
+        {
+          t: "Studio Recording",
+          d: "Our narrators record in professional, sound-treated studios under the direction of an experienced audio producer."
+        },
+        {
+          t: "Audio Editing & Mastering",
+          d: "Every file is meticulously edited for pacing, clarity, and consistency, then mastered to meet ACX, Audible, Spotify, and other platform standards."
+        },
+        {
+          t: "Proofing & Quality Assurance",
+          d: "We provide a complete proof listen to catch any errors and ensure flawless audio quality from start to finish."
+        },
+        {
+          t: "Final File Delivery",
+          d: "You receive the complete, fully produced audiobook in all required formats (MP3, WAV, and platform-specific files)."
+        },
+        {
+          t: "Distribution-Ready Setup",
+          d: "We can prepare your finalized audio files and metadata for a seamless upload to your chosen distributors."
+        }
+      ]
+    },
+    process: {
+      title: "The Audiobook Production Journey",
+      highligh: "Journey",
+      text: "Our process is collaborative and clear, designed to bring out the best in your story.",
+      steps: [
+        {
+          t: "Sample Auditions",
+          d: "We discuss the heart of your book and its ideal 'sound.' You then review custom sample readings from our curated shortlist of narrators and choose the perfect voice."
+        },
+        {
+          t: "Preparation & Direction",
+          d: "Your chosen narrator receives a detailed creative brief. We prepare the manuscript for recording, noting pronunciations, character voices, and tone shifts."
+        },
+        {
+          t: "Recording & Initial Editing",
+          d: "The narrator records in dedicated sessions. Our audio engineers edit the raw files, removing mistakes, long pauses, and mouth noises."
+        },
+        {
+          t: "Author Review & Final Polish",
+          d: "You receive the first 15 minutes for approval, followed by the completed audiobook for a final proof listen. We make any requested adjustments."
+        },
+        {
+          t: "Mastering & Delivery",
+          d: "We perform final audio mastering and deliver your complete, professional audiobook package, ready for distribution."
+        }
+      ]
+    },
+    cta: {
+      title: "Ready to Bring Your Book to Life in Audio?",
+      text: "Don't miss the chance to connect with millions of listeners who prefer to experience stories by ear. Let's discuss your project and get a custom quote for turning your manuscript into a captivating audiobook.",
+      points: ["Professional Voice", "Studio-Quality Sound", "A Simple, Guided Process"]
+    },
     faqs: [
-      { question: "Can I choose my narrator?", answer: "Absolutely! We provide auditions from multiple narrators for you to select from." },
-      { question: "How long does audiobook production take?", answer: "Typically 4-8 weeks depending on book length." },
+      {
+        q: "Should I narrate my own book?",
+        a: "It depends. If you're a trained performer or a public figure with a recognizable voice, self-narration can be powerful. For most authors, a professional narrator brings vocal stamina, acting skill, and studio expertise that elevate the listener's experience. We can advise what works best for your project."
+      },
+      {
+        q: "How much does it cost to produce an audiobook?",
+        a: "Costs vary by book length and narrator experience. We offer production models including royalty-share and fixed-rate options. We'll provide a clear, custom quote after a consultation."
+      },
+      {
+        q: "How long does the entire process take?",
+        a: "For a standard novel, production typically takes 4–8 weeks from narrator selection to final delivery, depending on length and revision rounds."
+      },
+      {
+        q: "Where will my audiobook be sold?",
+        a: "We deliver files compatible with Audible, Amazon, Apple Books, Spotify, and Google Play. We can prepare and guide distribution or handle uploads as part of our services."
+      }
     ],
   },
   {
@@ -229,59 +621,126 @@ export const services = [
     title: "Book Distribution",
     shortDescription: "Get your book into stores worldwide with comprehensive distribution.",
     icon: Globe,
-    image: "/images/services/distribution.jpg",
-    heroDescription: "Maximize your book's reach. Our distribution network gets your book into bookstores, libraries, and online retailers globally.",
-    features: [
-      "Global distribution network",
-      "Bookstore and library availability",
-      "Online retailer presence",
-      "Print-on-demand fulfillment",
-      "Inventory management",
-      "Sales tracking and reporting",
-    ],
-    process: [
-      { step: 1, title: "Distribution Planning", description: "Determine your distribution goals and channels." },
-      { step: 2, title: "Setup", description: "Configure distribution accounts and settings." },
-      { step: 3, title: "Launch", description: "Make your book available across all channels." },
-      { step: 4, title: "Management", description: "Ongoing monitoring and optimization." },
-    ],
+    hero: {
+      title: "Get Your Book on Shelves Around the World",
+      highlight: "World",
+      text: [
+        "Your book is ready. Now, let's make sure readers can find it, everywhere. True publishing success means being available wherever your readers shop. At Book Publishing Forge, our distribution service ensures your book is seamlessly listed across all major online retailers, into bookstore catalogs, and available for libraries to order, giving it the global reach it deserves.",
+        "Think of us as your logistics team for the publishing world. We handle the complex web of channels so you can focus on being an author."
+      ],
+    },
+    features: {
+      title: "What Our Distribution Network Delivers",
+      highlight: "Distribution",
+      text: "Book Publishing Forge, believes in going beyond basic Amazon listings to ensure maximum discoverability and availability.",
+      points: [
+        {
+          t: "Global Retailer Access",
+          d: "We list your book on Amazon (worldwide), Barnes & Noble, Apple Books, Kobo, Google Play, and many other online stores."
+        },
+        {
+          t: "IngramSpark Integration",
+          d: "By distributing through IngramSpark, your print book becomes available for order by independent bookstores and major chains via their primary wholesale catalog."
+        },
+        {
+          t: "Library & Academic Distribution",
+          d: "We make your book discoverable to libraries, schools, and universities through key library wholesalers like Baker & Taylor and OverDrive."
+        },
+        {
+          t: "ISBN & Metadata Management",
+          d: "We ensure your book's metadata (title, author, description, categories) is consistent and optimized across every platform to aid discovery."
+        },
+        {
+          t: "Unified Sales Reporting",
+          d: "We help you navigate and understand sales reports from different platforms or provide consolidated insights where possible."
+        },
+        {
+          t: "Print-On-Demand Fulfillment",
+          d: "When a customer orders your book, it is printed and shipped directly to them, eliminating any need for you to manage inventory or shipping."
+        }
+      ]
+    },
+    process: {
+      title: "How We Widen Your Book's Reach?",
+      highlight: "Widen",
+      text: "Our process at Book Publishing Forge is designed to expand your book's availability systematically.",
+      steps: [
+        {
+          t: "Distribution Channel Strategy",
+          d: "We analyze your book and goals to recommend the optimal mix of retail, library, and wholesale channels."
+        },
+        {
+          t: "Global Platform Setup",
+          d: "We handle the technical setup and file uploads across the selected networks, ensuring all formatting and metadata requirements are met."
+        },
+        {
+          t: "Quality Check",
+          d: "We verify your book is live, correctly listed, and orderable on all target platforms, including bookstore wholesale listings."
+        },
+        {
+          t: "Ongoing Availability Management",
+          d: "We monitor your book's status across channels and manage any necessary updates to metadata or files to keep everything current."
+        }
+      ]
+    },
+    cta: {
+      title: "All Set To Give Your Book a Global Passport?",
+      text: "Don't limit your audience to a single website. Let's get your book into the worldwide network where readers, bookstores, and libraries shop. Get your free distribution consultation and quote.",
+      points: ["Maximized Retail", "Reach Bookstore & Library Access", "Global Availability"]
+    },
     faqs: [
-      { question: "Can my book be in physical bookstores?", answer: "Yes! Through IngramSpark, your book can be ordered by bookstores and libraries worldwide." },
-      { question: "What about international distribution?", answer: "Our network covers major markets in North America, Europe, Asia, and beyond." },
+      {
+        q: "What's the difference between distribution and just using Amazon KDP?",
+        a: "Amazon KDP gets you on Amazon. Distribution gets you everywhere else — it makes your book available for bookstores to order (they rarely order from Amazon), puts you in library systems, and lists you on other major online retailers like Apple Books and Kobo."
+      },
+      {
+        q: "Do bookstores really order self-published books?",
+        a: "Yes, if they're available through IngramSpark. Bookstores order almost exclusively through wholesale catalogs; IngramSpark is the industry standard. Having your book listed there with a competitive discount makes it possible for bookstores to order it for their shelves."
+      },
+      {
+        q: "How do I get paid?",
+        a: "Sales revenue flows from the retailer or distributor to you according to their payment schedules. Book Publishing Forge helps you understand reporting and payment timelines for each platform."
+      }
     ],
   },
   {
     slug: "ebook-creation",
     title: "eBook Creation",
-    shortDescription: "Convert your manuscript into professional eBooks for all platforms.",
+    shortDescription: "Kindle, iPad, phone… your book should look great everywhere. We format it once, optimize it everywhere, so readers get a flawless digital experience.",
     icon: Tablet,
-    image: "/images/services/ebook.jpg",
-    heroDescription: "Reach digital readers everywhere. We create beautifully formatted eBooks that look perfect on every device.",
-    features: [
-      "ePub 3.0 creation for modern devices",
-      "Kindle format optimization",
-      "Responsive layout for all screen sizes",
-      "Interactive table of contents",
-      "Image optimization",
-      "Cross-platform testing",
-    ],
-    process: [
-      { step: 1, title: "Manuscript Prep", description: "Prepare and clean your manuscript for conversion." },
-      { step: 2, title: "Conversion", description: "Convert to eBook formats with proper styling." },
-      { step: 3, title: "Testing", description: "Test on multiple devices and readers." },
-      { step: 4, title: "Delivery", description: "Provide final files ready for upload." },
-    ],
+    hero: {
+      title: "",
+      text: "",
+    },
+    features: {
+      title: "",
+      text: "",
+      points: [
+        {
+          t: "",
+          d: ""
+        }
+      ]
+    },
+    process: {
+      title: "",
+      text: "",
+      steps: [
+        {
+          t: "",
+          d: ""
+        }
+      ]
+    },
+    cta: {
+      title: "",
+      text: "",
+    },
     faqs: [
-      { question: "What formats do you provide?", answer: "ePub (for Apple, Kobo, B&N), Mobi/KF8 (for Kindle), and PDF for direct sales." },
-      { question: "Will images look good in the eBook?", answer: "Yes, we optimize all images for digital display while maintaining quality." },
+      {
+        q: "",
+        a: ""
+      }
     ],
   },
 ];
-
-export const getServiceBySlug = (slug) => {
-  return services.find((service) => service.slug === slug);
-};
-
-export const getAllServiceSlugs = () => {
-  return services.map((service) => service.slug);
-};

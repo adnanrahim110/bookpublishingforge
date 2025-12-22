@@ -2,8 +2,17 @@
 
 import { Button, Input, Select, Textarea } from "@/components/ui";
 import Title from "@/components/ui/Title";
+import { contactDetails } from "@/constants";
 import { motion } from "framer-motion";
-import { Mail, MessageSquare, Phone, Send, User } from "lucide-react";
+import {
+  Clock,
+  Mail,
+  MapPin,
+  MessageSquare,
+  Phone,
+  Send,
+  User,
+} from "lucide-react";
 import { useState } from "react";
 
 const serviceOptions = [
@@ -52,7 +61,7 @@ const ContactFormSection = () => {
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary-50/50 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
 
       <div className="container-custom relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-14 items-start">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -61,13 +70,12 @@ const ContactFormSection = () => {
             <span className="text-primary-600 font-semibold text-sm uppercase tracking-widest mb-4 block">
               Get In Touch
             </span>
-            <Title tag="h2" highlight="Quote" className="mb-6">
-              Get Your Free Quote
+            <Title tag="h2" highlight="Book" className="mb-6">
+              Let’s Talk About Your Book
             </Title>
             <p className="text-foreground-muted mb-8">
-              Ready to start your publishing journey? Fill out the form and our
-              team will get back to you within 24 hours with a customized quote
-              for your project.
+              Tell us a little about your project, and we’ll send you a
+              personalized publishing plan and quote, usually within a day.
             </p>
 
             <div className="space-y-6">
@@ -76,8 +84,10 @@ const ContactFormSection = () => {
                   <Phone size={20} />
                 </div>
                 <div>
-                  <p className="font-medium text-foreground">Call Us</p>
-                  <p className="text-foreground-muted">+1 (555) 123-4567</p>
+                  <p className="font-semibold mb-1 text-foreground">Call Us</p>
+                  <p className="text-foreground-muted">
+                    {contactDetails.phone}
+                  </p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -85,8 +95,24 @@ const ContactFormSection = () => {
                   <Mail size={20} />
                 </div>
                 <div>
-                  <p className="font-medium text-foreground">Email Us</p>
-                  <p className="text-foreground-muted">hello@forgemybook.com</p>
+                  <p className="font-semibold mb-1 text-foreground">Email Us</p>
+                  <p className="text-foreground-muted">
+                    {contactDetails.email}
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="shrink-0 w-12 h-12 rounded-full bg-primary-50 flex items-center justify-center text-primary-500">
+                  <Clock size={20} />
+                </div>
+                <div>
+                  <p className="font-semibold mb-1 text-foreground">
+                    We’re here Monday–Friday, 9–5 EST
+                  </p>
+                  <p className="text-foreground-muted max-w-sm">
+                    Weekend writers, feel free to email, we’ll get back to you
+                    first thing Monday.
+                  </p>
                 </div>
               </div>
             </div>

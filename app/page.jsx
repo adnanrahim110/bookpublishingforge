@@ -1,10 +1,8 @@
-"use client";
-
 import {
   ContactForm,
   CTA,
   FAQs,
-  Hero,
+  Hero2,
   Portfolio,
   Process,
   Services,
@@ -15,7 +13,7 @@ import {
 export default function Home() {
   return (
     <>
-      <Hero />
+      <Hero2 />
       <Services />
       <Process />
       <Stats />

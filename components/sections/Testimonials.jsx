@@ -39,13 +39,13 @@ const Testimonials = () => {
             Testimonials
           </motion.span>
           <div className="mb-6">
-            <Title tag="h2" highlight="Authors">
-              What Our Authors Say
+            <Title tag="h2" highlight="Stories">
+              Real Authors. Real Stories.
             </Title>
           </div>
           <p className="text-foreground-muted text-lg">
-            Don't just take our word for it. Hear from authors who've trusted us
-            to bring their stories to life.
+            Don’t just take our word for it, hear from writers who’ve walked
+            this path before. These are their stories, in their own words.
           </p>
         </div>
 

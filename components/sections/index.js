@@ -2,6 +2,7 @@ export { default as ContactForm } from "./ContactForm";
 export { default as CTA } from "./CTA";
 export { default as FAQs } from "./FAQs";
 export { default as Hero } from "./Hero";
+export { default as Hero2 } from "./Hero2";
 export { default as Portfolio } from "./Portfolio";
 export { default as Process } from "./Process";
 export { default as Services } from "./Services";

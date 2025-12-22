@@ -43,6 +43,12 @@ const inter = Inter({
   weight: ["400", "500", "600", "700", "800"],
 });
 
+export const metadata = {
+  title: "Book Publishing Forge - Your Partner in Publishing Success",
+  description:
+    "Comprehensive book publishing services including ghostwriting, editing, design, marketing, and distribution. Let us help you bring your book to life and reach your audience.",
+}
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

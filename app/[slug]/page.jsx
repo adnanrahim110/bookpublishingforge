@@ -1,51 +1,52 @@
-import { CTA, ContactForm, FAQs } from "@/components/sections";
-import {
-  ServiceFeatures,
-  ServiceHero,
-  ServiceProcess,
-} from "@/components/services";
-import { getAllServiceSlugs, getServiceBySlug } from "@/constants/services";
+import { legalPages } from "@/constants";
+import { services } from "@/constants/services";
 import { notFound } from "next/navigation";
+import LegalPage from "./LegalPage";
+import ServicePage from "./ServicePage";
 
 export async function generateStaticParams() {
-  const slugs = getAllServiceSlugs();
-  return slugs.map((slug) => ({ slug }));
+  const serviceParams = services.map(({ slug }) => ({
+    slug: slug,
+  }));
+
+  const legalParams = legalPages.map(({ slug }) => ({
+    slug: slug,
+  }));
+  return [...serviceParams, ...legalParams];
 }
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const service = getServiceBySlug(slug);
-
-  if (!service) {
+  const service = services.find((s) => s.slug === slug);
+  if (service) {
     return {
-      title: "Service Not Found - Forge My Book",
+      title: `${service.title} | Book Publishing Forge`,
+    };
+  }
+
+  const legal = legalPages.find((p) => p.slug === slug);
+  if (legal) {
+    return {
+      title: `${legal.title} | Book Publishing Forge`,
     };
   }
 
   return {
-    title: `${service.title} - Forge My Book`,
-    description: service.shortDescription,
+    title: "Page Not Found - Forge My Book",
   };
 }
 
-export default async function ServicePage({ params }) {
+export default async function DynamicPage({ params }) {
   const { slug } = await params;
-  const service = getServiceBySlug(slug);
 
-  if (!service) {
-    notFound();
+  const service = services.find((s) => s.slug === slug);
+  if (service) {
+    const { icon: _icon, ...serializableService } = service;
+    return <ServicePage service={serializableService} />;
   }
-
-  const { icon: _icon, ...serviceForClient } = service;
-
-  return (
-    <>
-      <ServiceHero service={serviceForClient} />
-      <ServiceFeatures features={service.features} />
-      <ServiceProcess process={service.process} />
-      <FAQs items={service.faqs} />
-      <CTA />
-      <ContactForm />
-    </>
-  );
+  const legal = legalPages.find((p) => p.slug === slug);
+  if (legal) {
+    return <LegalPage legal={legal} />;
+  }
+  return notFound();
 }

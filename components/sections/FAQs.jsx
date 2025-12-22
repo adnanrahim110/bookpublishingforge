@@ -1,15 +1,13 @@
 "use client";
 
 import Title from "@/components/ui/Title";
-import { faqs } from "@/constants";
+import { displayFaqs } from "@/constants";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, HelpCircle } from "lucide-react";
 import { useState } from "react";
 
-const FAQs = ({ items }) => {
+const FAQs = ({ faqs = displayFaqs }) => {
   const [openIndex, setOpenIndex] = useState(0);
-
-  const displayFaqs = items || faqs;
 
   return (
     <section
@@ -30,13 +28,13 @@ const FAQs = ({ items }) => {
             Frequently Asked Questions
           </Title>
           <p className="text-foreground-muted text-lg">
-            Have questions? We've got answers. If you don't find what you're
-            looking for, feel free to contact us.
+            Questions? We’ve Got Answers. Publishing can feel confusing. Let’s
+            clear things up.
           </p>
         </div>
 
         <div className="max-w-3xl mx-auto">
-          {displayFaqs.map((faq, index) => (
+          {faqs.map((faq, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -47,10 +45,10 @@ const FAQs = ({ items }) => {
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
-                className={`w-full flex items-center justify-between p-5 rounded-xl text-left transition-all duration-300 ${
+                className={`w-full flex items-center justify-between p-5 text-left transition-all duration-300 ${
                   openIndex === index
-                    ? "bg-primary-500 text-white shadow-lg"
-                    : "bg-white text-foreground hover:bg-primary-50 shadow-sm"
+                    ? "bg-primary-500 text-white shadow-lg rounded-t-xl"
+                    : "bg-white text-foreground hover:bg-primary-50 shadow-sm rounded-xl"
                 }`}
               >
                 <div className="flex items-center gap-3">
@@ -60,7 +58,7 @@ const FAQs = ({ items }) => {
                       openIndex === index ? "text-white" : "text-primary-500"
                     }
                   />
-                  <span className="font-medium">{faq.question}</span>
+                  <span className="font-medium">{faq.q}</span>
                 </div>
                 <ChevronDown
                   size={20}
@@ -79,7 +77,7 @@ const FAQs = ({ items }) => {
                     className="overflow-hidden"
                   >
                     <div className="p-5 bg-white rounded-b-xl border-x border-b border-slate-100 text-foreground-muted">
-                      {faq.answer}
+                      {faq.a}
                     </div>
                   </motion.div>
                 )}

@@ -1,7 +1,6 @@
 "use client";
 
 import { stats } from "@/constants";
-import { cn } from "@/lib/utils";
 import { motion, useInView, useSpring } from "framer-motion";
 import { Award, BookOpen, Layers, Users } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
@@ -10,7 +9,6 @@ const Counter = ({ value, label, icon: IconName, index }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
-  // Extract number from string (e.g., "500+" -> 500)
   const numericValue = parseInt(value.replace(/\D/g, ""));
   const suffix = value.replace(/[0-9]/g, "");
 
@@ -26,7 +24,6 @@ const Counter = ({ value, label, icon: IconName, index }) => {
     }
   }, [isInView, numericValue, springValue]);
 
-  // Hook to update the displayed number
   const [displayValue, setDisplayValue] = useState(0);
 
   useEffect(() => {
@@ -35,7 +32,6 @@ const Counter = ({ value, label, icon: IconName, index }) => {
     });
   }, [springValue]);
 
-  // Icon mapping
   const icons = {
     book: BookOpen,
     users: Users,
@@ -70,7 +66,6 @@ const Counter = ({ value, label, icon: IconName, index }) => {
     </motion.div>
   );
 };
-// Add React import since we used React.useState
 
 const Stats = () => {
   return (

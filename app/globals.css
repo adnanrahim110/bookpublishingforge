@@ -62,7 +62,7 @@
   }
 
   body {
-    @apply overflow-x-hidden font-body bg-background text-foreground leading-tight;
+    @apply overflow-x-hidden font-body bg-background text-foreground leading-[1.4];
   }
 
   :is(h1, h2, h3, h4, h5, h6) {
@@ -86,7 +86,7 @@
   }
 
   p {
-    @apply text-foreground-muted leading-tight;
+    @apply text-foreground-muted leading-[1.4];
   }
 
   a {

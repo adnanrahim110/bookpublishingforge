@@ -4,13 +4,7 @@ import Title from "@/components/ui/Title";
 import { processSteps } from "@/constants";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import {
-  ArrowRight,
-  FileCheck,
-  FileText,
-  Rocket,
-  Settings,
-} from "lucide-react";
+import { FileCheck, FileText, Rocket, Settings } from "lucide-react";
 import Link from "next/link";
 
 const stepIcons = [FileText, FileCheck, Settings, Rocket];
@@ -27,8 +21,8 @@ const Process = () => {
             <span className="text-primary-600 font-semibold text-sm uppercase tracking-widest mb-2 block">
               How It Works
             </span>
-            <Title tag="h2" highlight="Simple">
-              Your Journey Made Simple
+            <Title tag="h2" highlight="Work?">
+              So How Does This Work?
             </Title>
           </div>
 
@@ -91,33 +85,32 @@ const Process = () => {
         <div className="hidden lg:grid grid-cols-1">
           <div className="grid grid-cols-[1.5fr_1fr_1fr] gap-x-8 relative h-full">
             <div className="pl-10 pr-7 pt-10 relative z-10">
-              <Title tag="h2" highlight="Simple" size="xl:text-6xl">
-                Your Journey Made Simple
+              <Title tag="h2" highlight="Work?" size="xl:text-6xl">
+                So How Does This Work?
               </Title>
               <p className="text-foreground-muted mt-4">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut
-                similique molestias facilis cupiditate minus nulla fuga
-                distinctio aliquam nemo exercitationem!
+                Our streamlined process ensures a hassle-free experience from
+                start to finish.
               </p>
             </div>
             <ProcessCard
-              step={processSteps[0]}
+              step={processSteps[2]}
               icon="/imgs/p1.png"
               number={3}
               align="center"
               delay={2}
             />
             <ProcessCard
-              step={processSteps[1]}
+              step={processSteps[3]}
               icon="/imgs/p2.png"
               number={4}
               align="center"
               delay={2.4}
             />
           </div>
-          <div className="grid grid-cols-[1.5fr_1fr_1fr] gap-x-8 mt-8">
+          <div className="grid grid-cols-[1.5fr_1fr_1fr] gap-x-8 mt-2">
             <ProcessCard
-              step={processSteps[2]}
+              step={processSteps[0]}
               icon="/imgs/p3.png"
               number={1}
               align="center"
@@ -125,7 +118,7 @@ const Process = () => {
             />
 
             <ProcessCard
-              step={processSteps[3]}
+              step={processSteps[1]}
               icon="/imgs/p4.png"
               number={2}
               align="center"
@@ -135,7 +128,7 @@ const Process = () => {
             <div className="flex flex-col justify-start pt-24 px-8 relative z-10">
               <svg
                 viewBox="0 0 70.35 53.18"
-                className="absolute -top-10 w-38 -left-5"
+                className="absolute -top-5 w-32 -left-5"
               >
                 <motion.path
                   d="M1.75,10.14S11.22.67,24,2.67,42.28,14.14,41.75,21.38s-4.27,8.52-6.94,8.26c-3-.3-4.59-7.5,2.64-10.21s15.36,0,20.13,6.39,5.34,14.79,1.81,25.38"
@@ -213,9 +206,7 @@ const ProcessCard = ({ step, icon, number, delay }) => {
         <h4 className="font-bold text-2xl mb-1 text-foreground">
           {step.title}
         </h4>
-        <p className="text-sm text-foreground-muted leading-relaxed">
-          {step.description}
-        </p>
+        <p className="text-sm text-foreground-muted">{step.description}</p>
       </div>
     </motion.div>
   );

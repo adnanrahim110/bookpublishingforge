@@ -63,9 +63,9 @@ const Services = () => {
       <div className="container-custom relative z-10">
         <SectionHeading
           subtitle="What We Do"
-          title="Comprehensive Publishing Solutions"
-          highlight="Solutions"
-          description="From manuscript to marketplace, we provide expert services tailored to your unique publishing journey."
+          title="Ever Wonder How a Book Really Gets Made?"
+          highlight="Book"
+          description="It’s more than just uploading a file. It’s a journey, and we’re here to guide you through every step with care, professionalism, and real human support."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

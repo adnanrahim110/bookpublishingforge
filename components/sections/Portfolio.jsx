@@ -43,15 +43,17 @@ const Portfolio = () => {
             viewport={{ once: true }}
             className="text-primary-600 font-semibold text-sm uppercase tracking-widest mb-3 block"
           >
-            Our Work
+            Browse Our Books
           </motion.span>
           <div className="mb-6">
-            <Title tag="h2" highlight="Stories">
-              Recent Success Stories
+            <Title tag="h2" highlight="Made">
+              Take a Peek at What We’ve Made
             </Title>
           </div>
           <p className="text-foreground-muted text-lg">
-            Experience our published works in an immersive 3D space.
+            Curious what a professionally published book looks like? Browse our
+            virtual shelf of recent success stories, flip through covers, read
+            snippets, and get inspired.
           </p>
         </div>
       </div>

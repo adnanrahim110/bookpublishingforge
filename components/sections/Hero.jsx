@@ -88,24 +88,26 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-center"
+          className="text-center max-w-4xl mx-auto"
         >
           <div className="relative inline-block">
-            <Title tag="h1" highlight="Publishing" className="font-bold">
-              Stories Worth Publishing
+            <Title tag="h1" highlight="Manuscript" className="font-bold">
+              Is Your Manuscript Ready to Become a Book?
             </Title>
           </div>
 
           <p className="text-lg xl:text-xl font-medium text-foreground-muted mb-10 mx-auto max-w-3xl mt-5">
-            Transform your manuscript into a professionally published book. We
-            guide you through every step.
+            Let’s Find Out! You’ve poured your heart into those pages. Now let’s
+            turn your story into something readers can hold, treasure, and
+            share. At Book Publishing Forge, we walk beside you, from messy
+            first draft to polished published work.
           </p>
 
           <Button
             href="/contact"
             className="bg-primary-600 hover:bg-primary-700 text-white rounded-lg px-8 text-lg font-semibold shadow-lg shadow-primary-600/20"
           >
-            Get Your Free Quote
+            Publish My Book Now
           </Button>
         </motion.div>
       </div>

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui";
 import { contactDetails, footerLinks } from "@/constants";
 import { motion } from "framer-motion";
 import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const Footer = () => {
@@ -44,14 +45,18 @@ const Footer = () => {
                 transition={{ duration: 0.5 }}
               >
                 <Link href="/" className="inline-block mb-6">
-                  <span className="font-qurova text-3xl font-bold text-white">
-                    Forge My Book
-                  </span>
+                  <Image
+                    src="/imgs/logo-w.png"
+                    width={400}
+                    height={100}
+                    alt="Book Publishing Forge Logo"
+                    className="w-84"
+                  />
                 </Link>
                 <p className="text-white/70 max-w-sm">
-                  Your trusted partner in bringing stories to life. From
-                  manuscript to marketplace, we help authors publish with
-                  confidence.
+                  Your story, forged with care. We guide authors from messy
+                  manuscripts to polished, published books, with clarity,
+                  support, and a whole lot of heart.
                 </p>
               </motion.div>
             </div>
