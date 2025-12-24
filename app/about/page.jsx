@@ -14,7 +14,12 @@ export default function AboutPage() {
       <Story />
       <Mission />
       <Process />
-      <CTA />
+      <CTA
+        cta={{
+          title: "The First Page of Your Publishing Journey",
+          text: "Your story is waiting. Let’s move it from your hands into readers’ hearts. <br/> Schedule your free, no-pressure consultation today. We’ll talk about your manuscript, your vision, and the clearest path forward, straightforward guidance from a team that’s been in your shoes.",
+        }}
+      />
       <ContactForm />
     </>
   );

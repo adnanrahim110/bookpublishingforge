@@ -709,38 +709,89 @@ export const services = [
     shortDescription: "Kindle, iPad, phone… your book should look great everywhere. We format it once, optimize it everywhere, so readers get a flawless digital experience.",
     icon: Tablet,
     hero: {
-      title: "",
-      text: "",
+      title: "eBook Creation: Optimized for Every Screen",
+      highlight: "Screen",
+      text: [
+        "Your readers are on Kindles, iPads, phones, and laptops. Your book should look flawless on all of them. A poorly formatted eBook can frustrate readers with awkward text flow, broken layouts, and unclickable links. We transform your final manuscript into a professionally formatted, universally compatible eBook file that delivers a perfect reading experience—no matter the device.",
+        "Think of us as your digital publishing technicians. We ensure the technology enhances your story, never gets in the way."
+      ],
     },
     features: {
-      title: "",
-      text: "",
+      title: "What Professional eBook Formatting Includes?",
+      highlight: "Includes?",
+      text: "We handle all the technical details to create a polished, functional digital book.",
       points: [
         {
-          t: "",
-          d: ""
+          t: "Universal File Creation",
+          d: "We produce industry-standard ePub and Amazon KF8/Mobi files compatible with Kindle, Apple Books, Kobo, Nook, Google Play, and all major e-readers."
+        },
+        {
+          t: "Responsive, 'Reflowable' Design",
+          d: "Unlike fixed print layouts, our eBooks are designed to adapt beautifully. Text, images, and chapters reflow seamlessly when a reader changes their font size, style, or device orientation."
+        },
+        {
+          t: "Professional Interior Styling",
+          d: "Clean, readable fonts, consistent chapter headings, properly styled scene breaks, and elegant formatting for front/back matter (copyright, dedication, about the author)."
+        },
+        {
+          t: "Fully Functional Navigation",
+          d: "A clickable, auto-generated Table of Contents that works perfectly on every e-reader and app."
+        },
+        {
+          t: "Image & Graphic Optimization",
+          d: "We carefully resize, embed, and caption images to ensure they display crisply without slowing down the file or breaking the text flow."
+        },
+        {
+          t: "Hyperlink & Metadata Embedding",
+          d: "We code active links (to your website, social media, or other chapters) and embed all necessary metadata (author name, ISBN, description) directly into the file."
         }
       ]
     },
     process: {
-      title: "",
-      text: "",
+      title: "The eBook Creation Process",
+      highlight: "Process",
+      text: "Our process is precise and focused on delivering a technically perfect product.",
       steps: [
         {
-          t: "",
-          d: ""
+          t: "File Assessment & Platform Review",
+          d: "We analyze your manuscript and confirm the target retailers (Amazon KDP, Apple, Kobo, etc.) to ensure we meet all their specific technical requirements."
+        },
+        {
+          t: "Coding & Formatting",
+          d: "Using professional tools, we hand-code and style the eBook file, paying meticulous attention to every HTML and CSS tag for consistency."
+        },
+        {
+          t: "Multi-Device Testing",
+          d: "This is the critical step. We test the eBook file on physical Kindles, iPads, multiple phone models, and desktop reading software to catch and fix any rendering issues."
+        },
+        {
+          t: "Final Quality Assurance & Delivery",
+          d: "We perform a final proof, validate the file against industry standards, and deliver your ready-to-upload eBook package."
         }
       ]
     },
     cta: {
-      title: "",
-      text: "",
+      title: "Let’s Launch Your Book into the Digital World",
+      text: "Don't let clunky formatting be the reason a reader puts your book down. Get a professional eBook that looks great everywhere. Receive your free, no-obligation quote for eBook creation today.",
+      points: ["Device Compatibility", "Retailer-Ready Files", "Polished Reading Experience"]
     },
     faqs: [
       {
-        q: "",
-        a: ""
-      }
+        q: "What's the difference between an eBook and a PDF?",
+        a: "A PDF is a fixed-layout document meant for printing or viewing on a large screen—it doesn't reflow. An ePub/KF8 eBook is a flexible, reflowable file built for e-readers. It's the required format for all major eBook stores."
+      },
+      {
+        q: "Can you format complex eBooks with images, tables, or footnotes?",
+        a: "Absolutely. We specialize in formatting non-fiction, textbooks, cookbooks, and poetry that require careful handling of images, sidebars, tables, and linked endnotes or footnotes."
+      },
+      {
+        q: "What do you need from me to start?",
+        a: "Your final, proofread manuscript in a Word document (.docx) or Google Doc, along with any image files. We'll handle the technical conversion."
+      },
+      {
+        q: "Do I need a separate ISBN for my eBook?",
+        a: "It's industry best practice and required by some retailers (like Apple Books). We strongly recommend it and can guide you through acquiring one to ensure your eBook is properly identified across all platforms."
+      },
     ],
   },
 ];

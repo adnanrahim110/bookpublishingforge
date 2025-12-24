@@ -80,7 +80,7 @@ const CTA = ({ cta = {} }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 leading-tight"
+            className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-2 leading-tight"
           >
             {title}
           </motion.h2>
@@ -90,10 +90,9 @@ const CTA = ({ cta = {} }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-lg md:text-xl text-white/80 mb-10 max-w-3xl mx-auto"
-          >
-            {text}
-          </motion.p>
+            className="text-lg md:text-xl text-white/80 mb-10 max-w-4xl mx-auto"
+            dangerouslySetInnerHTML={{ __html: text }}
+          />
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}

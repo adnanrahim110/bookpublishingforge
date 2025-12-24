@@ -15,7 +15,7 @@ const Process = () => {
       id="process"
       className="section-padding bg-background overflow-hidden relative min-h-250 lg:min-h-240 flex items-center"
     >
-      <div className="container-custom relative h-full">
+      <div className="container-custom lg:px-0 xl:px-8 relative h-full">
         <div className="lg:hidden flex flex-col gap-12 relative">
           <div className="mb-8">
             <span className="text-primary-600 font-semibold text-sm uppercase tracking-widest mb-2 block">
@@ -67,7 +67,7 @@ const Process = () => {
 
         <svg
           viewBox="0 0 800 440.47"
-          className="absolute w-auto left-[53%] -top-5 -translate-x-1/2 h-180 pointer-events-none z-0 overflow-visible"
+          className="absolute w-auto left-[53.7%] -top-5 -translate-x-1/2 h-156 xl:h-180 pointer-events-none z-0 overflow-visible"
         >
           <motion.path
             d="M7.2,47.39V173.74c0,12.71,10.36,46.36,49.65,48.94,19.53.24,125.26-.56,141-.56s50-3.91,73.32,26.21c11.77,14.82,9.36,37,9.65,49.88.27,11.59,0,53.89,0,69.65,0,15.36,3.35,52.17,43.8,63.62a41.25,41.25,0,0,0,7.32,1.37c18,1.75,64.77,1.28,84.88,1.28,44.23.1,66.12,2.44,86.59-17.56s18.12-40.95,18.35-56.95,0-67.29,0-79.29c0-10.87-9.66-44-39.49-52.53A49.57,49.57,0,0,0,468.59,226c-51.11,0-81.19-.48-92.21-.94-11.3-.47-49.41-4.24-57.41-45.42-1.89-21.64-3.77-81.88-1.65-104.7,2-21.38,8.31-46.49,40.25-56.92a42.54,42.54,0,0,1,12.2-2.08c44.08-1,285.77-1.24,313.43-1.24,28.07,0,48.08,7.62,55.21,35.63a30.72,30.72,0,0,1,.93,6.88c.7,24.76-.14,132.55-.14,146.55,0,14.83-4.23,39-34.41,43.24-11.47.53-48,.35-48,.35"
@@ -85,7 +85,7 @@ const Process = () => {
         <div className="hidden lg:grid grid-cols-1">
           <div className="grid grid-cols-[1.5fr_1fr_1fr] gap-x-8 relative h-full">
             <div className="pl-10 pr-7 pt-10 relative z-10">
-              <Title tag="h2" highlight="Work?" size="xl:text-6xl">
+              <Title tag="h2" highlight="Work?" size="lg:text-5xl xl:text-6xl">
                 So How Does This Work?
               </Title>
               <p className="text-foreground-muted mt-4">
@@ -108,7 +108,7 @@ const Process = () => {
               delay={2.4}
             />
           </div>
-          <div className="grid grid-cols-[1.5fr_1fr_1fr] gap-x-8 mt-2">
+          <div className="grid grid-cols-[1.5fr_1fr_1fr] gap-x-8 mt-6 xl:mt-0">
             <ProcessCard
               step={processSteps[0]}
               icon="/imgs/p3.png"
@@ -163,7 +163,7 @@ const Process = () => {
               >
                 <Link
                   href="/contact"
-                  className="text-4xl font-light text-foreground mb-4 group"
+                  className="text-3xl xl:text-4xl font-light text-foreground mb-4 group"
                 >
                   <span className="underline underline-offset-4 decoration-1 group-hover:decoration-2 transition-all ease-in-out duration-300">
                     Ready to <span className="text-primary">Start?</span> <br />
@@ -189,21 +189,21 @@ const ProcessCard = ({ step, icon, number, delay }) => {
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ delay, duration: 0.5 }}
       viewport={{ once: true }}
-      className="p-6 pt-5 w-full max-w-70 relative flex flex-col justify-start items-center"
+      className="p-5 xl:p-6 xl:pt-5 w-full max-w-70 relative flex flex-col justify-start items-center"
     >
       <div
         className={cn(
-          "absolute left-1/2 -translate-x-1/2 size-16 rounded-[50%_50%_38%_62%/50%_63%_37%_50%] bg-purple-200 text-black border-5 border-background flex items-center justify-center font-bold text-2xl -top-7"
+          "absolute left-1/2 -translate-x-1/2 size-12 xl:size-16 rounded-[50%_50%_38%_62%/50%_63%_37%_50%] bg-purple-200 text-black border-5 border-background flex items-center justify-center font-bold text-xl xl:text-2xl -top-5 xl:-top-7"
         )}
       >
         {number}
       </div>
-      <div className="w-44 mb-4">
+      <div className="w-30 xl:w-44 mb-4">
         <img src={icon} alt={step.title} />
       </div>
 
       <div className="text-center">
-        <h4 className="font-bold text-2xl mb-1 text-foreground">
+        <h4 className="font-bold text-xl xl:text-2xl mb-1 text-foreground">
           {step.title}
         </h4>
         <p className="text-sm text-foreground-muted">{step.description}</p>

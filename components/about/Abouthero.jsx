@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const Abouthero = () => {
   return (
-    <section className="pt-32 pb-20 bg-background relative overflow-hidden min-h-screen max-h-180 flex items-center">
+    <section className="pt-32 pb-20 bg-background relative overflow-hidden min-h-screen flex items-center">
       <img
         src="/imgs/frame.png"
         className="absolute bottom-0 left-0 h-90 mix-blend-multiply w-auto z-1"
@@ -19,59 +19,26 @@ const Abouthero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-primary-100 px-4 py-1.5 rounded-full text-sm font-medium text-primary-700 mb-6 shadow-sm"
-            >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-500"></span>
-              </span>
-              Est. 2014 • 10+ Years of Excellence
-            </motion.div>
-
-            <Title
-              tag="h1"
-              size="text-5xl lg:text-7xl font-bold leading-tight"
-              highlight="Legacy"
-              className="mb-6"
-            >
-              Craft Your Legacy
+            <Title tag="h1" highlight="Forge" className="mb-4">
+              About Book Publishing Forge
             </Title>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-foreground-muted text-lg md:text-xl max-w-xl mb-8 leading-relaxed"
+              className="text-foreground-muted text-lg xl:text-xl max-w-xl mb-8 leading-relaxed"
             >
-              We're more than just publishers. We are the architects of stories,
-              dedicated to transforming your manuscript into a masterpiece that
-              inspires readers for generations to come.
+              Every book begins as a spark—an idea, a memory, a story that needs
+              to be told. But between that spark and a finished book on a
+              reader's shelf lies a journey that can feel overwhelming, lonely,
+              and filled with technical hurdles. <br />
+              That's where we come in. At Book Publishing Forge, we believe that
+              great stories deserve to be published with care, clarity, and
+              expert support. We're not a faceless corporation; we're your
+              partners, guides, and biggest advocates on the path from
+              manuscript to masterpiece.
             </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-              className="flex items-center gap-8"
-            >
-              <div className="flex flex-col">
-                <span className="text-3xl font-bold text-foreground">500+</span>
-                <span className="text-sm text-foreground-muted uppercase tracking-wider">
-                  Books Published
-                </span>
-              </div>
-              <div className="w-px h-12 bg-slate-200" />
-              <div className="flex flex-col">
-                <span className="text-3xl font-bold text-foreground">50+</span>
-                <span className="text-sm text-foreground-muted uppercase tracking-wider">
-                  Awards Won
-                </span>
-              </div>
-            </motion.div>
           </motion.div>
 
           <motion.div

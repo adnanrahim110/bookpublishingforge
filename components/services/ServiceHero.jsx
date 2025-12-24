@@ -47,12 +47,7 @@ const ServiceHero = ({ service }) => {
               <span className="uppercase">{service.title}</span>
             </motion.div>
 
-            <Title
-              tag="h1"
-              highlight={hero.highlight}
-              size="text-5xl lg:text-7xl font-bold tracking-tight leading-[1.1]!"
-              className="mb-6 pb-2"
-            >
+            <Title tag="h1" highlight={hero.highlight} className="mb-3 pb-2">
               {hero.title}
             </Title>
 
@@ -87,7 +82,6 @@ const ServiceHero = ({ service }) => {
             >
               <Button
                 href="/contact"
-                size="lg"
                 icon={ArrowRight}
                 className="shadow-lg shadow-primary-500/20 hover:shadow-primary-500/30"
               >
@@ -96,7 +90,6 @@ const ServiceHero = ({ service }) => {
               <Button
                 href="#features"
                 variant="outline"
-                size="lg"
                 className="bg-white/50 backdrop-blur-sm hover:bg-white"
               >
                 Explore Features

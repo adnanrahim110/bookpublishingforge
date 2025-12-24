@@ -2,13 +2,14 @@
 
 import { Button } from "@/components/ui";
 import { navLinks } from "@/constants";
+import { cn } from "@/lib/utils";
 import {
   AnimatePresence,
   motion,
   useMotionValueEvent,
   useScroll,
 } from "framer-motion";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -102,28 +103,69 @@ const Navbar = () => {
             />
           </Link>
 
-          <div className="hidden lg:flex items-center gap-8 text-lg">
+          <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => {
-              const isActiveParent =
-                link.dropdown &&
-                link.items.some((item) => item.href === pathname);
+              const url = link.href;
+              const isActive = link.dropdown
+                ? link.items.some((item) => item.href === pathname)
+                : pathname === url;
+              const isHovered = activeDropdown === link.name;
 
               return (
-                <div key={link.name} className="relative">
+                <div
+                  key={link.name}
+                  className="relative"
+                  onMouseEnter={() => handleDropdownToggle(link.name)}
+                  onMouseLeave={() => setActiveDropdown(null)}
+                >
                   {link.dropdown ? (
-                    <div className="relative" ref={dropdownRef}>
+                    <>
                       <button
-                        onClick={() => handleDropdownToggle(link.name)}
-                        className={`flex items-center gap-1 font-medium hover:text-primary-500 transition-colors duration-200 py-2 cursor-pointer ${
-                          isActiveParent
-                            ? "text-primary-500"
-                            : "text-foreground"
+                        className={`relative z-10 flex items-center gap-1 px-4 py-2 rounded-full font-medium transition-all duration-300 ${
+                          isActive
+                            ? "text-primary-600"
+                            : "text-foreground/70 hover:text-foreground"
                         }`}
                       >
+                        {isActive && (
+                          <motion.div
+                            layoutId="navbar-active"
+                            className={`absolute inset-0 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] border rounded-full -z-10 backdrop-blur-sm transition-colors duration-300 ${
+                              isScrolled
+                                ? "bg-primary-50/50 border-primary-200/60"
+                                : "bg-white border-primary-100/50"
+                            }`}
+                            transition={{
+                              type: "spring",
+                              bounce: 0.2,
+                              duration: 0.6,
+                            }}
+                          >
+                            <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-8 h-8 bg-primary-200/20 blur-xl rounded-full" />
+                          </motion.div>
+                        )}
+                        {!isActive && activeDropdown === link.name && (
+                          <motion.span
+                            layoutId="navbar-hover"
+                            className={`absolute inset-0 rounded-full -z-20 transition-colors duration-300 ${
+                              isScrolled ? "bg-slate-100" : "bg-slate-50/80"
+                            }`}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{
+                              type: "spring",
+                              bounce: 0.2,
+                              duration: 0.6,
+                            }}
+                          />
+                        )}
                         {link.name}
                         <ChevronDown
-                          className={`w-4 h-4 transition-transform duration-200 ${
-                            activeDropdown === link.name ? "rotate-180" : ""
+                          className={`w-4 h-4 transition-transform duration-300 ${
+                            activeDropdown === link.name || isActive
+                              ? "rotate-180 text-primary-600"
+                              : "text-foreground/50"
                           }`}
                         />
                       </button>
@@ -131,159 +173,108 @@ const Navbar = () => {
                       <AnimatePresence>
                         {activeDropdown === link.name && (
                           <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: 20 }}
-                            transition={{ duration: 0.3, ease: "easeOut" }}
-                            className="fixed left-1/2 -translate-x-1/2 top-20 w-[95vw] max-w-7xl px-6"
+                            initial={{ opacity: 0, y: 10, scale: 0.98 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            exit={{ opacity: 0, y: 10, scale: 0.98 }}
+                            transition={{ duration: 0.2 }}
+                            className="absolute left-1/2 -translate-x-1/2 top-full pt-4 w-150"
                           >
-                            <div className="relative bg-white/95 backdrop-blur-xl rounded-3xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.15)] border border-white/50 overflow-hidden">
-                              <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-primary-400 via-primary-500 to-primary-600" />
-                              <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary-100/50 rounded-full blur-3xl" />
-                              <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-primary-50/50 rounded-full blur-3xl" />
-
-                              <div className="relative flex">
-                                <div className="flex-1 p-5">
-                                  <div className="flex items-center gap-2 mb-6">
-                                    <div className="w-8 h-0.5 bg-linear-to-r from-primary-500 to-transparent" />
-                                    <span className="text-xs font-bold text-primary-500 uppercase tracking-widest">
-                                      Our Services
-                                    </span>
-                                  </div>
-
-                                  <div className="grid grid-cols-2 space-y-2 gap-x-10 divide-y divide-neutral-200/50">
-                                    {link.items.map((item, index) => {
-                                      const IconComponent = item.icon;
-                                      const isActiveItem =
-                                        pathname === item.href;
-
-                                      return (
-                                        <motion.div
-                                          key={item.name}
-                                          initial={{ opacity: 0, y: 15 }}
-                                          animate={{ opacity: 1, y: 0 }}
-                                          transition={{
-                                            delay: index * 0.04,
-                                            duration: 0.3,
-                                          }}
-                                          className="not-last:pb-2"
-                                        >
-                                          <Link
-                                            href={item.href}
-                                            className={`group flex items-center gap-3 p-2 rounded-2xl border transition-all duration-300 ${
-                                              isActiveItem
-                                                ? "bg-linear-to-r from-primary-50 to-transparent border-primary-100"
-                                                : "bg-transparent hover:bg-linear-to-r hover:from-primary-50 hover:to-transparent border-transparent hover:border-primary-100"
-                                            }`}
-                                          >
-                                            <span
-                                              className={`relative p-3 rounded-xl bg-linear-to-br transition-all duration-300 shadow-sm ${
-                                                isActiveItem
-                                                  ? "from-primary-100 to-primary-200 scale-110 text-primary-600"
-                                                  : "from-primary-50 to-primary-100 text-primary-500 group-hover:from-primary-100 group-hover:to-primary-200 group-hover:scale-110"
-                                              }`}
-                                            >
-                                              <IconComponent className="w-5 h-5" />
-                                              <span className="absolute inset-0 rounded-xl bg-primary-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                            </span>
-                                            <div className="flex flex-col">
-                                              <span
-                                                className={`font-semibold transition-colors duration-200 ${
-                                                  isActiveItem
-                                                    ? "text-primary-600"
-                                                    : "text-foreground group-hover:text-primary-600"
-                                                }`}
-                                              >
-                                                {item.name}
-                                              </span>
-                                              <span className="text-xs text-foreground-muted">
-                                                Learn more →
-                                              </span>
-                                            </div>
-                                          </Link>
-                                        </motion.div>
-                                      );
-                                    })}
-                                  </div>
-                                </div>
-
-                                <div className="w-80 relative overflow-hidden">
-                                  <div className="absolute inset-0 bg-linear-to-br from-primary-500 via-primary-600 to-primary-700" />
-                                  <div
-                                    className="absolute inset-0 opacity-10"
-                                    style={{
-                                      backgroundImage:
-                                        "radial-gradient(circle, white 1px, transparent 1px)",
-                                      backgroundSize: "20px 20px",
-                                    }}
-                                  />
-
-                                  <div className="relative h-full p-8 flex flex-col justify-between text-white">
-                                    <div>
-                                      <motion.div
-                                        initial={{ opacity: 0, x: 20 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        transition={{ delay: 0.2 }}
-                                      >
-                                        <span className="inline-block px-3 py-1 bg-white/20 rounded-full text-xs font-semibold mb-4 backdrop-blur-sm">
-                                          ✨ Start Your Journey
-                                        </span>
-                                        <h3 className="font-qurova text-[34px] font-bold mb-3">
-                                          Ready to Publish Your Book?
-                                        </h3>
-                                        <p className="text-white/80 text-sm mb-6">
-                                          Transform your manuscript into a
-                                          professionally published book. Get
-                                          expert guidance every step of the way.
-                                        </p>
-                                        <Button
-                                          href="/contact"
-                                          variant="solid"
-                                          tone="ghost"
-                                        >
-                                          Get Free Quote
-                                        </Button>
-                                      </motion.div>
-                                    </div>
-
-                                    <motion.div
-                                      initial={{ opacity: 0, y: 20 }}
-                                      animate={{ opacity: 1, y: 0 }}
-                                      transition={{ delay: 0.3 }}
-                                      className="mt-6 flex items-center gap-3 pt-6 border-t border-white/20"
+                            <div
+                              className={cn(
+                                "rounded-2xl shadow-xl border border-white/20 overflow-hidden ring-1 ring-black/5",
+                                isScrolled
+                                  ? "bg-white"
+                                  : "bg-white/90 backdrop-blur-xl"
+                              )}
+                            >
+                              <div className="p-2 grid grid-cols-2 gap-2">
+                                {link.items.map((item) => {
+                                  const Icon = item.icon;
+                                  return (
+                                    <Link
+                                      key={item.name}
+                                      href={item.href}
+                                      className={`group flex items-center gap-4 p-3 rounded-xl transition-all duration-300 hover:bg-primary-50/50 ${
+                                        pathname === item.href
+                                          ? "bg-primary-50/80"
+                                          : "bg-transparent"
+                                      }`}
                                     >
-                                      <div className="flex -space-x-2">
-                                        <div className="w-8 h-8 rounded-full bg-white/30 border-2 border-white flex items-center justify-center text-xs font-bold">
-                                          5★
+                                      <div
+                                        className={`p-2.5 rounded-lg transition-colors duration-300 ${
+                                          pathname === item.href
+                                            ? "bg-primary-100 text-primary-600"
+                                            : "bg-slate-100 text-slate-500 group-hover:bg-primary-100 group-hover:text-primary-600"
+                                        }`}
+                                      >
+                                        <Icon size={20} strokeWidth={1.5} />
+                                      </div>
+                                      <div>
+                                        <div
+                                          className={`font-semibold text-sm transition-colors duration-300 ${
+                                            pathname === item.href
+                                              ? "text-primary-700"
+                                              : "text-slate-700 group-hover:text-primary-700"
+                                          }`}
+                                        >
+                                          {item.name}
+                                        </div>
+                                        <div className="text-xs text-slate-500 mt-0.5 font-medium">
+                                          Learn more
                                         </div>
                                       </div>
-                                      <div className="text-sm">
-                                        <span className="font-semibold">
-                                          500+ Authors
-                                        </span>
-                                        <span className="text-white/70">
-                                          {" "}
-                                          trust us
-                                        </span>
-                                      </div>
-                                    </motion.div>
-                                  </div>
-                                </div>
+                                    </Link>
+                                  );
+                                })}
                               </div>
                             </div>
                           </motion.div>
                         )}
                       </AnimatePresence>
-                    </div>
+                    </>
                   ) : (
                     <Link
                       href={link.href}
-                      className={`font-medium transition-colors duration-200 py-2 ${
-                        pathname === link.href
-                          ? "text-primary-500"
-                          : "text-foreground hover:text-primary-500"
+                      className={`relative z-10 px-4 py-2 rounded-full font-medium transition-all duration-300 ${
+                        isActive
+                          ? "text-primary-600"
+                          : "text-foreground/70 hover:text-foreground"
                       }`}
+                      onMouseEnter={() => setActiveDropdown(link.name)}
                     >
+                      {isActive && (
+                        <motion.div
+                          layoutId="navbar-active"
+                          className={`absolute inset-0 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] border rounded-full -z-10 backdrop-blur-sm transition-colors duration-300 ${
+                            isScrolled
+                              ? "bg-primary-50/50 border-primary-200/60"
+                              : "bg-white border-primary-100/50"
+                          }`}
+                          transition={{
+                            type: "spring",
+                            bounce: 0.2,
+                            duration: 0.6,
+                          }}
+                        >
+                          <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-8 h-8 bg-primary-200/20 blur-xl rounded-full" />
+                        </motion.div>
+                      )}
+                      {!isActive && activeDropdown === link.name && (
+                        <motion.span
+                          layoutId="navbar-hover"
+                          className={`absolute inset-0 rounded-full -z-20 transition-colors duration-300 ${
+                            isScrolled ? "bg-slate-100" : "bg-slate-50/80"
+                          }`}
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          transition={{
+                            type: "spring",
+                            bounce: 0.2,
+                            duration: 0.6,
+                          }}
+                        />
+                      )}
                       {link.name}
                     </Link>
                   )}

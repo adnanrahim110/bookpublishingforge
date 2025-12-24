@@ -9,51 +9,51 @@ import { useEffect, useRef, useState } from "react";
 
 const featuredBooks = [
   {
-    src: "/imgs/portfolio/1.png",
+    src: "/imgs/portfolio/1.jpg",
     alt: "Featured book cover",
   },
   {
-    src: "/imgs/portfolio/14.png",
+    src: "/imgs/portfolio/14.jpg",
     alt: "Featured book cover",
   },
   {
-    src: "/imgs/portfolio/3.png",
+    src: "/imgs/portfolio/3.jpg",
     alt: "Featured book cover",
   },
   {
-    src: "/imgs/portfolio/4.png",
+    src: "/imgs/portfolio/4.jpg",
     alt: "Featured book cover",
   },
   {
-    src: "/imgs/portfolio/2.png",
+    src: "/imgs/portfolio/2.jpg",
     alt: "Featured book cover",
   },
   {
-    src: "/imgs/portfolio/12.png",
+    src: "/imgs/portfolio/12.jpg",
     alt: "Featured book cover",
   },
   {
-    src: "/imgs/portfolio/10.png",
+    src: "/imgs/portfolio/10.jpg",
     alt: "Featured book cover",
   },
   {
-    src: "/imgs/portfolio/9.png",
+    src: "/imgs/portfolio/9.jpg",
     alt: "Featured book cover",
   },
   {
-    src: "/imgs/portfolio/8.png",
+    src: "/imgs/portfolio/8.jpg",
     alt: "Featured book cover",
   },
   {
-    src: "/imgs/portfolio/7.png",
+    src: "/imgs/portfolio/7.jpg",
     alt: "Featured book cover",
   },
   {
-    src: "/imgs/portfolio/6.png",
+    src: "/imgs/portfolio/6.jpg",
     alt: "Featured book cover",
   },
   {
-    src: "/imgs/portfolio/5.png",
+    src: "/imgs/portfolio/5.jpg",
     alt: "Featured book cover",
   },
 ];
@@ -159,7 +159,7 @@ const Hero2 = () => {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-3 text-lg md:text-xl text-foreground-muted max-w-4xl mx-auto"
+            className="mt-3 xl:text-xl text-foreground-muted max-w-4xl mx-auto"
           >
             Let’s Find Out! You’ve poured your heart into these pages <br /> Now
             let’s turn your story into something readers can hold, treasure, and

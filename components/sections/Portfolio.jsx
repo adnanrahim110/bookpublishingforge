@@ -80,7 +80,7 @@ const Portfolio = () => {
           {[...Array(8)].map((_, idx) => (
             <SwiperSlide key={idx} className="w-[320px]! sm:w-95! pb-10">
               <BookCard
-                book={`/imgs/portfolio/${idx + 1}.png`}
+                book={`/imgs/portfolio/${idx + 1}.jpg`}
                 isActive={idx === activeIndex}
                 mouseX={mouseX}
                 mouseY={mouseY}

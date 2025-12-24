@@ -8,41 +8,41 @@ import { useRef } from "react";
 
 const steps = [
   {
-    title: "Drafting & Ideation",
+    title: "Begins With Free Consultation",
     description:
-      "The journey begins with a spark. We help nurture your initial ideas into a solid manuscript structure, ensuring your voice shines through every page.",
+      "It all starts with a conversation. We listen to your vision, your goals, and where you feel stuck. We'll discuss your manuscript, target audience, and what success looks like for you. This is where we craft a custom blueprint for your book’s journey—no pressure, just honest advice.",
     icon: PenTool,
     number: "01",
     rotation: 2,
   },
   {
-    title: "Expert Editing",
+    title: "The Blueprint – Strategy & Planning",
     description:
-      "Our professional editors refine your narrative, correcting errors and enhancing flow while strictly preserving your unique authorial style.",
+      "With a clear goal in mind, we build your detailed publishing plan. This includes timelines, service recommendations (editing, design, marketing), and a transparent quote. You’ll know exactly what to expect, when, and why, before we begin any work.",
     icon: Edit3,
     number: "02",
     rotation: -1,
   },
   {
-    title: "Design & Typesetting",
+    title: "The Crafting – Expert Execution",
     description:
-      "We craft a stunning cover and professional interior layout that commands attention on the shelf and provides a comfortable reading experience.",
+      "This is where your book takes shape. Our team of editors, designers, and writers gets to work, guided by your plan. You’ll receive regular updates and have opportunities for feedback at every key milestone. We’re crafting with you, not just for you.",
     icon: Layers,
     number: "03",
     rotation: 1.5,
   },
   {
-    title: "Proofreading & Polish",
+    title: "The Launch – Publishing & Promotion",
     description:
-      "A final, rigorous review to ensure perfection. We catch the smallest details so your readers can enjoy a flawless immersive experience.",
+      "Your polished manuscript is ready for the world. We handle the technical setup (formatting, distribution, retailer listings) and execute the launch strategy we planned. From securing your ISBN to running launch-day promotions, we ensure your book makes a splash.",
     icon: BookOpen,
     number: "04",
     rotation: -2,
   },
   {
-    title: "Global Distribution",
+    title: "The Legacy – Ongoing Support",
     description:
-      "We launch your book to the world, making it available on major platforms like Amazon, Barnes & Noble, and independent bookstores globally.",
+      "Our partnership doesn’t end on launch day. We provide post-launch guidance, sales insights, and support for your next steps, whether that’s marketing a current book or planning your next one. We’re invested in your long-term success as an author.",
     icon: Send,
     number: "05",
     rotation: 1,
@@ -74,16 +74,17 @@ const Process = () => {
             >
               Our Process
             </motion.span>
-            <Title tag="h2" highlight="Journey" className="mb-6">
-              The Publication Journey
+            <Title tag="h2" highlight="Process" className="mb-6">
+              Our Process To Publish Your Ideal Book
             </Title>
             <p className="text-foreground-muted text-lg max-w-2xl mx-auto">
-              From rough draft to best-seller, we guide you through every page
-              of the process.
+              We believe a great publishing journey should feel guided, not
+              confusing. That’s why every author we partner with follows our
+              clear, proven 5-step path.
             </p>
           </div>
 
-          <div className="relative w-full max-w-7xl mx-auto max-md:aspect-4/3 md:h-90 flex items-center justify-center">
+          <div className="relative w-full max-md:aspect-4/3 md:h-90 flex items-center justify-center">
             {steps.map((step, index) => {
               const rangeStart = index * (1 / steps.length);
               const rangeEnd = (index + 1) * (1 / steps.length);
@@ -121,13 +122,13 @@ const Process = () => {
             <div className="absolute inset-0 flex items-center justify-center z-0">
               <Link
                 href="/contact"
-                className="text-center p-8 bg-white/50 backdrop-blur-sm rounded-xl border-2 border-dashed border-primary-200 hover:bg-primary-400 hover:border-white/50 hover:-translate-y-1 hover:shadow-[8px_8px_16px] hover:shadow-primary-300 transition-all duration-300 group"
+                className="text-center p-8 bg-white/50 backdrop-blur-sm rounded-xl border-2 border-dashed border-primary-200 hover:bg-primary-400 hover:border-white/50 hover:-translate-y-1 hover:shadow-[5px_5px_0px] hover:shadow-primary-50 transition-all duration-300 group"
               >
                 <BookOpen
                   size={48}
                   className="mx-auto text-primary-400 group-hover:text-primary-200 mb-4"
                 />
-                <h3 className="text-4xl font-bold text-primary-800 group-hover:text-primary-950 transition-colors duration-300">
+                <h3 className="text-4xl font-bold text-primary-800 group-hover:text-primary-950 group-hover:text-shadow-sm text-shadow-white/40 transition-colors duration-300">
                   Ready to Publish?
                 </h3>
                 <p className="text-primary-600 group-hover:text-primary-100 transition-colors duration-300">
@@ -156,7 +157,7 @@ const ManuscriptPage = ({ step, style }) => {
         <div className="absolute inset-0 opacity-30 pointer-events-none mix-blend-multiply bg-[url('https://www.transparenttextures.com/patterns/rough-cloth.png')]" />
 
         <div className="relative z-10 w-full h-full flex flex-col md:flex-row gap-8 md:gap-16 items-center">
-          <div className="shrink-0 flex flex-col items-center justify-center w-full md:w-1/3 border-b md:border-b-0 md:border-r border-stone-200 pb-6 md:pb-0 md:pr-12 border-dashed">
+          <div className="shrink-0 flex flex-col items-center justify-center w-full md:w-1/8 border-b md:border-b-0 md:border-r border-stone-200 pb-6 md:pb-0 md:pr-12 border-dashed">
             <div className="text-[8rem] md:text-[8rem] font-serif leading-none text-stone-100 font-bold absolute -top-20 -left-12 select-none -z-10 text-stroke">
               {step.number}
             </div>

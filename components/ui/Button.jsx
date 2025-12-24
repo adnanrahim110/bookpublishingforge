@@ -28,7 +28,7 @@ const Button = forwardRef(
 
     const sizes = {
       sm: "px-5 py-2.5 text-sm",
-      default: "px-7 py-3.5 text-base",
+      default: "px-7 py-2.5 text-base",
       lg: "px-9 py-4.5 text-lg",
     };
 
@@ -62,21 +62,21 @@ const Button = forwardRef(
         const toneStyles = {
           primary: `
             bg-primary-500 text-white
-            before:absolute before:inset-0 before:bg-primary-600 before:translate-y-full before:transition-transform before:duration-300 before:ease-out
+            before:absolute border-2 border-primary-500 before:inset-0 before:bg-primary-600 before:translate-y-full before:transition-transform before:duration-300 before:ease-out
             hover:before:translate-y-0
-            after:absolute after:inset-0 after:bg-gradient-to-t after:from-black/10 after:to-transparent after:opacity-0 after:transition-opacity after:duration-200
+            after:absolute border-2 after:inset-0 after:bg-gradient-to-t after:from-black/10 after:to-transparent after:opacity-0 after:transition-opacity after:duration-200
             active:after:opacity-100
             shadow-lg shadow-primary-500/20 hover:shadow-xl hover:shadow-primary-500/30
           `,
           secondary: `
             bg-foreground text-white
-            before:absolute before:inset-0 before:bg-foreground/80 before:translate-y-full before:transition-transform before:duration-300 before:ease-out
+            before:absolute border-2 border-foreground before:inset-0 before:bg-foreground/80 before:translate-y-full before:transition-transform before:duration-300 before:ease-out
             hover:before:translate-y-0
             shadow-lg shadow-foreground/20 hover:shadow-xl hover:shadow-foreground/30
           `,
           ghost: `
             bg-primary-50 text-primary-600
-            before:absolute before:inset-0 before:bg-primary-100 before:scale-x-0 before:origin-left before:transition-transform before:duration-300 before:ease-out
+            before:absolute border-2 border-primary-100 before:inset-0 before:bg-primary-100 before:scale-x-0 before:origin-left before:transition-transform before:duration-300 before:ease-out
             hover:before:scale-x-100
           `,
         };

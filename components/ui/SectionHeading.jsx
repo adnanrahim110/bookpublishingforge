@@ -27,7 +27,11 @@ const SectionHeading = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className={cn("max-w-5xl mb-12 md:mb-16", alignStyles[align], className)}
+      className={cn(
+        "max-w-3xl xl:max-w-5xl mb-12 md:mb-16",
+        alignStyles[align],
+        className
+      )}
     >
       {subtitle && (
         <motion.span
@@ -49,7 +53,7 @@ const SectionHeading = ({
         {title}
       </Title>
       {description && (
-        <p className="text-foreground-muted text-lg leading-relaxed mt-2">
+        <p className="text-foreground-muted xl:text-lg leading-relaxed mt-2">
           {description}
         </p>
       )}

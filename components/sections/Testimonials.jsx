@@ -4,7 +4,6 @@ import Title from "@/components/ui/Title";
 import { reviews } from "@/constants";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
-import Image from "next/image";
 import { useRef, useState } from "react";
 
 import "swiper/css";
@@ -81,16 +80,12 @@ const Testimonials = () => {
                 spaceBetween: 24,
               },
               1024: {
-                slidesPerView: 2.5,
-                spaceBetween: 30,
-              },
-              1280: {
                 slidesPerView: 3,
                 spaceBetween: 30,
               },
             }}
             onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-            className="pb-16!"
+            className="pb-16! pl-4! pt-4!"
           >
             {reviews.map((review, index) => (
               <SwiperSlide key={review.id}>
@@ -177,24 +172,22 @@ const TestimonialCard = ({ review, isActive }) => {
             ))}
           </div>
 
-          <p className="text-foreground leading-relaxed mb-6 text-sm md:text-base line-clamp-4">
+          <p className="text-foreground leading-relaxed mb-6 text-sm xl:text-base line-clamp-4">
             "{review.text}"
           </p>
 
           <div className="flex items-center gap-3 pt-4 border-t border-slate-100">
-            <div className="relative w-12 h-12 rounded-full overflow-hidden bg-primary-100 ring-2 ring-primary-50">
-              <Image
-                src={`https://placehold.co/100x100/2E86AB/FFFFFF?text=${review.name
-                  .split(" ")
-                  .map((n) => n[0])
-                  .join("")}`}
-                alt={review.name}
-                fill
-                className="object-cover"
-              />
+            <div className="relative w-12 h-12 rounded-full overflow-hidden bg-primary-500 ring-2 ring-primary-50 flex items-center justify-center text-white text-lg font-bold">
+              {review.name
+                .split(" ")
+                .filter((_, i, arr) => i === 0 || i === arr.length - 1)
+                .map((n) => n[0])
+                .join("")}
             </div>
             <div>
-              <h4 className="font-bold text-foreground">{review.name}</h4>
+              <h4 className="text-lg xl:text-xl font-bold text-foreground">
+                {review.name}
+              </h4>
               <p className="text-primary-500 text-sm">{review.role}</p>
             </div>
           </div>

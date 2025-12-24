@@ -20,8 +20,8 @@ const Story = () => {
           >
             <div className="relative aspect-4/3 rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="https://placehold.co/800x600/2E86AB/FFFFFF?text=Our+Team"
-                alt="Forge My Book Team"
+                src="/imgs/story-team.png"
+                alt="Forge My Book Team working together"
                 fill
                 className="object-cover"
               />
@@ -42,26 +42,31 @@ const Story = () => {
             <span className="text-primary-600 font-semibold text-sm uppercase tracking-widest mb-4 block">
               Our Story
             </span>
-            <Title tag="h2" highlight="Journey" className="mb-6">
-              A Journey Built on Passion
+            <Title tag="h2" highlight="Forge" className="mb-6">
+              Why a "Forge"?
             </Title>
             <div className="space-y-4 text-foreground-muted">
               <p>
-                Forge My Book was born from a simple yet powerful idea: every
-                story deserves to be told, and every author deserves expert
-                guidance to bring their vision to life.
+                The name "Forge" isn't an accident. A forge is where raw
+                materials are transformed with skill, heat, and pressure into
+                something stronger and more valuable. We see the publishing
+                process the same way. We are a US-based company that proudly
+                facilitates the authors worldwide.
               </p>
               <p>
-                Founded in 2014 by a team of publishing veterans and literary
-                enthusiasts, we set out to democratize the publishing industry.
-                We saw talented writers struggling to navigate the complex world
-                of book publishing, and we knew we could help.
+                We founded Book Publishing Forge because we saw too many
+                talented writers give up, not for lack of skill, but from the
+                frustration of navigating a complex industry alone. We saw too
+                many great ideas lost to confusion about formatting, fear of
+                marketing, or the sheer exhaustion of doing it all by
+                themselves.
               </p>
               <p>
-                Today, we've helped over 500 authors across 50+ genres transform
-                their manuscripts into professionally published books. From
-                first-time writers to seasoned authors, our commitment remains
-                the same: to craft legacies that last generations.
+                Our mission is simple: to be the steady, skilled hands that help
+                you shape your raw manuscript into a polished, professional, and
+                published book. We provide the heat of creative collaboration
+                and the pressure of professional standards to help you forge
+                your literary legacy.
               </p>
             </div>
           </motion.div>

@@ -47,13 +47,13 @@ const Counter = ({ value, label, icon: IconName, index }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ delay: index * 0.1, duration: 0.5 }}
-      className="flex flex-col items-center text-center p-6 bg-white rounded-2xl border border-primary-50 shadow-xs hover:shadow-md transition-shadow"
+      className="flex flex-col items-center text-center px-3 py-5 xl:p-6 bg-white rounded-2xl border border-primary-50 shadow-xs hover:shadow-md transition-shadow"
     >
       <div className="w-14 h-14 rounded-full bg-primary-50 flex items-center justify-center text-primary-500 mb-4">
         <Icon size={28} strokeWidth={1.5} />
       </div>
 
-      <div className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-2 flex items-baseline">
+      <div className="text-3xl lg:text-4xl xl:text-5xl font-heading font-bold text-foreground mb-2 flex items-baseline">
         {displayValue}
         <span className="text-2xl md:text-3xl text-primary-500 ml-1">
           {suffix}

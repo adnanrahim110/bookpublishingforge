@@ -4,15 +4,6 @@ import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import React from "react";
 
-/**
- * Title Component
- * Supports:
- * - Dynamic Tag (h1-h6)
- * - HTML tags in children (e.g., <br />, <span>)
- * - Text Highlighting with SVG underline
- * - Character-by-character animation
- * - Proper word wrapping (fixes line break issues)
- */
 const Title = ({
   tag = "h2",
   className,
@@ -25,8 +16,8 @@ const Title = ({
   const Tag = motion[tag] || motion.h2;
 
   const defaultSizes = {
-    h1: "text-5xl md:text-6xl xl:text-7xl font-bold",
-    h2: "text-4xl md:text-5xl font-bold",
+    h1: "text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-bold",
+    h2: "text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold",
     h3: "text-3xl md:text-4xl font-semibold",
     h4: "text-2xl md:text-3xl font-semibold",
     h5: "text-xl md:text-2xl font-medium",
@@ -35,7 +26,6 @@ const Title = ({
 
   const sizeClass = size || defaultSizes[tag] || defaultSizes.h2;
 
-  // Animation Variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -56,7 +46,6 @@ const Title = ({
     },
   };
 
-  // --- Helper: Render a Word (group of chars) ---
   const renderWord = (word, i, isHighlight = false) => {
     return (
       <span
@@ -75,58 +64,38 @@ const Title = ({
             {char}
           </motion.span>
         ))}
-
-        {/* If this groups highlighted words, we might want the underline per word or spanning.
-            The previous implementation spanned the specific text segment.
-            If we split by words, the underline should probably follow the highlight wrapper logic instead.
-            Let's handle highlight wrapping at the text node level, not inside each word if possible,
-            OR we add the underline to the word if it's highlighted.
-
-            BUT: If highlighting a phrase "Hello World", we want one underline?
-            Or underline per word? "Consultancy" image usually has continuous underline or specific word.
-            User said "highlighting the part of title".
-            Let's stick to the previous visual: Underline the *segment*.
-        */}
       </span>
     );
   };
 
-  // --- Helper: Process Text Nodes for Highlights and Words ---
   const processText = (text) => {
     if (!highlight) {
-      // Just split by space to get words
       return text.split(/(\s+)/).map((segment, i) => {
         if (segment.match(/^\s+$/))
           return (
             <span key={i} className="inline-block">
               {" "}
             </span>
-          ); // Preserve space
+          );
         return renderWord(segment, i);
       });
-      // Actually simpler: text.split(" ").map... adds space logic.
-      // Better: Split by words, render words with margin-right.
     }
 
-    // Split by highlight
     const regex = new RegExp(`(${highlight})`, "gi");
     const parts = text.split(regex);
 
     return parts.map((part, i) => {
       const isHighlight = part.toLowerCase() === highlight.toLowerCase();
 
-      // Split this part into words
       const words = part.split(" ");
 
       const content = words.map((word, wIndex) => {
-        if (!word) return null; // Avoid empty strings from split
-        // Render word container
+        if (!word) return null;
         return (
           <span
             key={`${i}-${wIndex}`}
             className="inline-block whitespace-nowrap relative mr-[0.25em]"
           >
-            {/* Chars */}
             {word.split("").map((char, cIndex) => (
               <motion.span
                 key={`${i}-${wIndex}-${cIndex}`}
@@ -146,10 +115,8 @@ const Title = ({
       if (isHighlight) {
         return (
           <span key={i} className="relative inline-block text-primary-500">
-            {/* Render Words inside Highlight Wrapper */}
             {content}
 
-            {/* The SVG Underline for this highlighted segment */}
             <span className="absolute left-0 -bottom-2 w-full h-[0.4em] pointer-events-none">
               <motion.span
                 className="block w-full h-full overflow-hidden"
@@ -178,7 +145,6 @@ const Title = ({
     });
   };
 
-  // --- Helper: Recursive Children Processing ---
   const processChildren = (node) => {
     if (typeof node === "string") {
       return processText(node);
@@ -191,10 +157,8 @@ const Title = ({
     }
 
     if (React.isValidElement(node)) {
-      // Preserve specific tags like <br>
       if (node.type === "br") return <br />;
 
-      // For other elements, recursively process their children
       return React.cloneElement(node, {
         ...node.props,
         children: processChildren(node.props.children),

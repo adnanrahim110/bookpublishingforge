@@ -1,8 +1,6 @@
 "use client";
 
-import Title from "@/components/ui/Title";
 import { services } from "@/constants/services";
-import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -20,7 +18,7 @@ const ServiceCard = ({ service, index }) => {
       className="group relative h-full"
     >
       <Link href={`/${service.slug}`} className="block h-full">
-        <div className="relative h-full bg-white rounded-3xl p-8 border border-primary-100/50 shadow-sm transition-all duration-300 hover:shadow-[0_20px_40px_-15px_rgba(46,134,171,0.15)] hover:-translate-y-2 overflow-hidden">
+        <div className="relative h-full bg-white rounded-3xl lg:p-5 xl:p-8 border border-primary-100/50 shadow-sm transition-all duration-300 hover:shadow-[0_20px_40px_-15px_rgba(46,134,171,0.15)] hover:-translate-y-2 overflow-hidden">
           <div className="absolute inset-0 bg-linear-to-br from-primary-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
           <div className="absolute -right-8 -top-8 w-32 h-32 bg-primary-100/30 rounded-full blur-2xl group-hover:bg-primary-100/60 transition-colors duration-500" />
@@ -30,11 +28,11 @@ const ServiceCard = ({ service, index }) => {
               <Icon className="w-7 h-7" strokeWidth={1.5} />
             </div>
 
-            <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary-600 transition-colors">
+            <h3 className="text-lg xl:text-xl font-bold text-foreground mb-3 group-hover:text-primary-600 transition-colors">
               {service.title}
             </h3>
 
-            <p className="text-foreground-muted leading-relaxed mb-6 grow">
+            <p className="text-foreground-muted xl:leading-relaxed mb-6 grow">
               {service.shortDescription}
             </p>
 

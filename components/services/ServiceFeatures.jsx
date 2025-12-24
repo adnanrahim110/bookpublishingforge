@@ -66,7 +66,7 @@ const ServiceFeatures = ({ features }) => {
       />
 
       <div className="container-custom relative z-10">
-        <div className="text-center max-w-4xl mx-auto mb-16 md:mb-20">
+        <div className="text-center flex flex-col items-center max-w-4xl mx-auto mb-16 md:mb-20">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
