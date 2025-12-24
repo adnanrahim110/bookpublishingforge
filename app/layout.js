@@ -1,5 +1,5 @@
 import { Appshell } from "@/components/layout";
-import { Inter } from "next/font/google";
+import { Lato } from "next/font/google";
 import localFont from 'next/font/local';
 import "./globals.css";
 
@@ -36,11 +36,11 @@ const qurova = localFont({
   display: "swap",
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const lato = Lato({
+  variable: "--font-lato",
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["100", "300", "400", "700", "900"],
 });
 
 export const metadata = {
@@ -52,7 +52,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${qurova.variable} antialiased`}>
+      <body className={`${lato.variable} ${qurova.variable} antialiased`}>
         <Appshell>
           {children}
         </Appshell>

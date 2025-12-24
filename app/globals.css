@@ -39,7 +39,7 @@
   --color-border-dark: #CBD5E1;
 
   --font-qurova: var(--font-qurova);
-  --font-body: 'Inter', system-ui, sans-serif;
+  --font-body: "Lato", sans-serif;
 
   --text-display: 4.5rem;
   --text-h1: 3.5rem;

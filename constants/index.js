@@ -37,7 +37,7 @@ export const stats = [
   { value: "500+", label: "Happy Authors", icon: "users" },
   { value: "35+", label: "Genres Covered", icon: "layers" },
   { value: "250+", label: "Books Published", icon: "book" },
-  { value: "7+", label: "Years in Your Corner", icon: "award" },
+  { value: "10+", label: "Years in Your Corner", icon: "award" },
 ];
 
 export const processSteps = [
